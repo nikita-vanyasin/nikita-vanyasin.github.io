@@ -52,8 +52,9 @@
     <h1 align="center">NIKITA VANYASIN</h1>
     <h3 align="center">IT Experience Timeline</h3>
     <div class="experience_container">
+        <div class="blur"></div>
         <div class="container_main">
-            <div class="item">
+            <div class="item" id="timeline_container">
                 <div id="timeline">
                     <div>
                     
@@ -645,6 +646,19 @@
         </div>
         
     </div>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function() {
+            if(document.readyState === "interactive" || document.readyState === "complete") {
+
+
+                var elem = document.getElementById('timeline_container');
+                elem.scrollTop = elem.scrollHeight;
+
+                return true;
+            }
+        });
+    </script>
 </section>
       
     </div>

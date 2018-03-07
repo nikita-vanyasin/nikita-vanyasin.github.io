@@ -8,9 +8,29 @@
     -moz-osx-font-smoothing: grayscale;
     color: #79838C;
 
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray;
+    position: relative;
 }
+
+.experience_container .blur
+{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 5.1rem;
+    display: block;
+    width: 100%;
+    z-index: 300;
+    background: -moz-linear-gradient(top, white 20%, rgba(255, 255, 255, 0) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, white 20%, rgba(255, 255, 255, 0) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, white 20%, rgba(255, 255, 255, 0) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#00ffffff', GradientType=0);
+    /* IE6-9 */;
+}
+
 
 .experience_container a
 {
@@ -76,7 +96,7 @@
 {
     #timeline h3
     {
-        font-size: 1.1em;
+        font-size: 1.2em;
     }
 }
 
@@ -87,41 +107,21 @@
 
 #timeline section.year:first-child section
 {
-    margin-top: -1.3em;
+    margin-top: -1.2em;
     padding-bottom: 0;
 }
 
 #timeline section.year section
 {
     position: relative;
-    margin-bottom: 2.2em;
-}
-
-#timeline section.year section h4
-{
-    position: absolute;
-    bottom: 0;
-    font-size: .9em;
-    font-weight: 400;
-    line-height: 1.2em;
-    margin: 0;
-    padding: 0 0 0 89px;
-    color: #C5C5C5;
-}
-
-@media (min-width: 62em)
-{
-    #timeline section.year section h4
-    {
-        font-size: 1em;
-    }
+    margin-bottom: 2em;
 }
 
 #timeline section.year section ul
 {
     list-style-type: none;
     padding: 0 0 0 75px;
-    margin: -1.35rem 0 1em;
+    margin: -2rem 0 1em;
     max-width: 50rem;
     font-size: 1em;
 }
@@ -153,7 +153,7 @@
     border-radius: 50%;
     position: absolute;
     left: 54px;
-    top: 3px;
+    top: 6px;
     z-index: 2;
 }
 
@@ -165,6 +165,7 @@
 #timeline section.year section ul li
 {
     margin-left: .5rem;
+    padding-bottom: 8px;
 }
 
 #timeline section.year section ul li:before
