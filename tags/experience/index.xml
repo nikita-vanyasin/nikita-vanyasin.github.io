@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Experience on Nikita Vanyasin, Software Engineer</title>
+    <link>https://nikita-vanyasin.github.io/tags/experience/</link>
+    <description>Recent content in Experience on Nikita Vanyasin, Software Engineer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 02 Oct 2016 22:55:05 -0400</lastBuildDate>
+    
+	<atom:link href="https://nikita-vanyasin.github.io/tags/experience/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Experience</title>
+      <link>https://nikita-vanyasin.github.io/experience/</link>
+      <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/experience/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
