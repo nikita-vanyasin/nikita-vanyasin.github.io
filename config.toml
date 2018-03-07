@@ -1,0 +1,44 @@
+baseurl = "https://nikita-vanyasin.github.io/"
+languageCode = "en-US"
+title = "Nikita Vanyasin, Software Engineer"
+# Enable comments by entering your Disqus shortname
+disqusShortname = ""
+# Enable Google Analytics by entering your tracking code
+googleAnalytics = ""
+theme = "hugo-sustain"
+
+[permalinks]
+  post = "/:year/:month/:day/:slug"
+
+[params]
+  avatar = "profile.jpg"
+  author = "Nikita Vanyasin"
+  description = "Nikita Vanyasin - Software Engineer"
+  resume_url = "/experience.html"
+
+  # Custom assets can be linked with their paths relative to static/
+  custom_css = []
+  custom_js  = []
+
+[params.social]
+  Github        = "nikita-vanyasin"
+  Email         = "nikita.vanyasin@gmail.com"
+  LinkedIn      = "vanyasin"
+  Stackoverflow = "users/3482246/nikita"
+
+## Main Menu
+#[[menu.main]]
+#  name = "blog"
+#  weight = 100
+#  identifier = "blog"
+#  url = "/blog/"
+[[menu.main]]
+  name = "projects & experience"
+  identifier = "projects_and_experience"
+  weight = 200
+  url = "/experience.html"
+[[menu.main]]
+  name = "linkedin"
+  identifier = "linkedin"
+  weight = 300
+  url = "https://linkedin.com/in/vanyasin"
