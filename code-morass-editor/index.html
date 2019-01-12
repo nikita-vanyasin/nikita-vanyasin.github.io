@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="map[]" />
+    <meta name="description" content="Nikita Vanyasin - Software Engineer">
+    <link rel="shortcut icon" type="image/x-icon" href="https://nikita-vanyasin.github.io/img/favicon.ico">
+    <title>Projectional editing</title>
+    <meta name="generator" content="Hugo 0.38-DEV" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://nikita-vanyasin.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <link rel="stylesheet" href="https://nikita-vanyasin.github.io/css/timeline.css">
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://nikita-vanyasin.github.io/"><i class="fa fa-home"></i></a>
+    </div>
+    <div id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/experience/">PROJECTS &amp; EXPERIENCE</a></li>
+        
+        <li><a href="https://linkedin.com/in/vanyasin">LINKEDIN</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://nikita-vanyasin.github.io/code-morass-editor/">Projectional editing</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          March 16, 2017
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">Проекты</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            
+            <div class="blogpost">
+              <section class="section section--body"> 
+
+<div class="section-divider">
+   Всем привет.
+</div>
+
+<div class="section-content">
+  <div class="section-inner sectionLayout--insetColumn">
+    <p class="graf graf--p">
+      Это пост для тех, кто каждый день пишет код.
+    </p>
+    
+    <p class="graf graf--p">
+      Как вы вероятно знаете, я таки аспирант. Аспиранты в аспирантуре делают полезные дела и придумывают всякие безумные штуки, чтобы защитить кандидатскую диссертацию (зачем они это делают — тема для отдельного поста). <span style="color: #ffffff;">(о воинской обязанности в России)</span>
+    </p>
+    
+    <p class="graf graf--p">
+      Короче.
+    </p>
+    
+    <p class="graf graf--p">
+      Обычно люди не охотно делают то, что никому не нужно. А я не знаю, нужен ли мой проект кому-то. Поэтому пишу этот пост в первую очередь, чтобы собрать фидбек. Если прочитали статью, пожалуйста отпишитесь в комментах хоть что-нибудь, типа “чувак, ты втираешь какую-то дичь” или “норм”, или “о да! это то, о чем я думал каждую ночь”.
+    </p>
+    
+    <p class="graf graf--p">
+      Поехали.
+    </p>
+  </div>
+</div></section> <section class="section section--body"> 
+
+<div class="section-divider">
+  <hr class="section-divider" />
+</div>
+
+<div class="section-content">
+  <div class="section-inner sectionLayout--insetColumn" style="text-align: center;">
+    <p class="graf graf--p" style="text-align: left;">
+      Как вы пишите код? Вероятнее всего вы используете модную IDE, типа JetBrains IDEA или PHPStorm. Или Visual Studio. Или покрытый плагинами Vim. Что вы делаете? Вы пишите <em class="markup--em markup--p-em">текст</em>. Много <em class="markup--em markup--p-em">текста</em>. Ваш инструмент помогает вам это делать, выплевывает подсказки, подсвечивает, если что не так и так далее.
+    </p>
+    
+    <p class="graf graf--p" style="text-align: left;">
+      Вы написали код. Кто-то его поправил. Потом его ещё кто-то поправил. Вы можете даже посмотреть, кто его поправил, когда и зачем. Как вы это делаете? Вероятнее всего через Git/SVN: вы используете специальные команды, чтобы посмотреть прошлые версии кода. В вашей модной IDE вы даже можете очень удобно показать рядом два куска <em class="markup--em markup--p-em">текста </em>(старую и новую версии) и увидеть, что именно поменялось. Здорово.
+    </p>
+    
+    <p class="graf graf--p" style="text-align: left;">
+      В процессе написания кода в модной IDE вы почти наверняка используете автоматические рефакторинги: вынесение переменной, метода, полей, констант, вот это всё. Как вы это делаете? Вы даёте команду IDE, и она меняет <em class="markup--em markup--p-em">текст</em>.
+    </p>
+    
+    <p class="graf graf--p" style="text-align: left;">
+      Ещё более часто вы делаете рефакторинг руками. Приходится делать это, когда IDE не умеет или не справляется с такими задачами. Как вы это делаете руками? Вы меняете <em class="markup--em markup--p-em">текст.</em>
+    </p>
+    
+    <p class="graf graf--p" style="text-align: left;">
+      Обратимся к определению рефакторинга. Например вот это с Вики:
+    </p>
+    
+    <blockquote class="graf graf--blockquote">
+      <p style="text-align: left;">
+        <strong class="markup--strong markup--blockquote-strong">Рефакторинг  </strong>— процесс изменения внутренней структуры программы, не затрагивающий её внешнего поведения и имеющий целью облегчить понимание её работы.
+      </p>
+    </blockquote>
+    
+    <p class="graf graf--p" style="text-align: left;">
+      Короче говоря, это небольшое изменение, которое не меняет семантику (поведение), по факту мы меняем <em class="markup--em markup--p-em">текст</em>.
+    </p>
+    
+    <p class="graf graf--p" style="text-align: left;">
+      Как вы узнаёте, что кто-то произвел рефакторинг в прошлом? Только наглядно, сравнив куски <em class="markup--em markup--p-em">текста</em>.
+    </p>
+    
+    <p class="graf graf--p" style="text-align: left;">
+      Видим проблему #1: Вы не можете просто и легко определить, поменялась ли семантика программы, просто взглянув на разные версии кода. Потому что вы работаете с <em class="markup--em markup--p-em">текстом</em>.
+    </p>
+    
+    <p class="graf graf--p" style="text-align: left;">
+      Посмотрим в другую сторону: что представляет собой ваше ПО? Скорее всего это куча <em class="markup--em markup--p-em">текстовых </em>файлов, кое-как упорядоченных по папкам файловой системы. 99% времени работы над проектом вы не заходите в эти папки в вашем FAR, Explorer или Total Commander, потому что IDE предоставляют абстракцию над этим делом и показывают вам структуру проекта в TreeView. Раньше не было IDE, и всю эту портянку файлов можно было объяснить: пользователь должен был иметь возможность как-то редактировать файлы.
+    </p>
+    
+    <p class="graf graf--p" style="text-align: left;">
+      Зачем сейчас это нужно? Программист будущего работает с более абстрактными вещами: классами, объектами и т.д. Он редко делает больше чем один класс в файле. Он пытается логично организовать связи между классами, в соответствии моделью предметной области. Ему не нужен весь этот обвес в виде отображения сущностей предметной области на файлы в файловой системе. Когда я хочу поправить поведение класса, я не ищу файл, перебирая структуру папок, я вызываю диалог поиска класса, ввожу несколько букв из имени класса, и IDE его открывает.
+    </p>
+    
+    <p class="graf graf--p" style="text-align: left;">
+      Проблема #2: Вам приходится управлять файлами.
+    </p>
+    
+    <p class="graf graf--p" style="text-align: left;">
+      Можно и дальше описывать существующие проблемы, но пока остановимся на этих.
+    </p>
+    
+    <p class="graf graf--p" style="text-align: left;">
+      Идея, как от них избавиться <a class="markup--anchor markup--p-anchor" href="https://pchiusano.github.io/2014-09-30/punchcard-era.html" target="_blank" rel="noopener" data-href="https://pchiusano.github.io/2014-09-30/punchcard-era.html">витает </a>в головах компьютерных гиков давным-давно. Называется — <a class="markup--anchor markup--p-anchor" href="https://martinfowler.com/bliki/ProjectionalEditing.html" target="_blank" rel="noopener" data-href="https://martinfowler.com/bliki/ProjectionalEditing.html">projectional editing</a>. Суть: вы редактируете не текстовые файлы, а семантику вашего проекта — по факту вы редактируете абстрактное синтаксическое дерево. Как оно хранится — заботится редактор.
+    </p>
+    
+    <p class="graf graf--p" style="text-align: left;">
+      Ничего особо нового в этом подходе нет. Самое первое, что приходит в голову из примеров — язык для обучения программированию <a class="markup--anchor markup--p-anchor" href="http://code.org" target="_blank" rel="noopener" data-href="http://code.org">code.org</a> :
+    </p><figure class="graf graf--figure">
+    
+    <img class="graf-image aligncenter" src="https://cdn-images-1.medium.com/max/1000/1*dySbqfXrf13WdYbs4Y48DA.png" data-image-id="1*dySbqfXrf13WdYbs4Y48DA.png" data-width="557" data-height="584" /></figure> 
+    
+    <p>
+      code.org
+    </p>
+    
+    <p class="graf graf--p" style="text-align: left;">
+      Вы накидываете блоки кода (по сути узлы дерева)из доступных элементов, и запускаете. Ошибиться синтаксически не возможно. Это не файл на диске (внутренняя реализация скрыта) и вы можете посмотреть историю изменения семантики программы. Пожалуй единственный минус — работа мышкой. А профессионалы ведь не пользуются мышкой, верно?
+    </p>
+    
+    <p class="graf graf--p" style="text-align: left;">
+      Второй пример — редактор кода в <a class="markup--anchor markup--p-anchor" href="https://www.jetbrains.com/mps/" target="_blank" rel="noopener" data-href="https://www.jetbrains.com/mps/">JetBrains MPS</a>. Вообще-то это платформа для создания предметно-ориентированных языков и собственно разработки под такие языки. Ребята могли и не вкручивать туда projectional editor, но они это сделали и получилось довольно удобно. К сожалению, сохраняется всё в те же самые файлы, редактор используется только частично. Историю изменения семантики тоже не посмотришь.
+    </p><figure class="graf graf--figure">
+    
+    <img class="graf-image" src="https://cdn-images-1.medium.com/max/1000/0*SvOsYZ9Q2kwi4YU_.jpg" data-image-id="0*SvOsYZ9Q2kwi4YU_.jpg" data-width="603" data-height="370" /><figcaption class="imageCaption">JetBrains MPS</figcaption></figure> 
+    
+    <p class="graf graf--p" style="text-align: left;">
+      Вообще, с популярными примерами на этом можно покончить. Projectional Editor’ы не прижились (во всяком случае в сфере разработки ПО). Фаулер <a class="markup--anchor markup--p-anchor" href="https://martinfowler.com/bliki/ProjectionalEditing.html" target="_blank" rel="noopener" data-href="https://martinfowler.com/bliki/ProjectionalEditing.html">выделяет</a> их основной недостаток в том, что код можно будет смотреть и редактировать только в специальном инструменте, что для таких штук нельзя использовать VCS.
+    </p>
+    
+    <p class="graf graf--p" style="text-align: left;">
+      Я, честно не вижу в этом особых проблем. 99% времени редактирования кода я провожу в одной и той же IDE. Мне не нужны другие инструменты. (Оставшийся 1% — читерство на сервере, либо эксперименты с окружением в терминале). Почему бы не сделать специальную VCS для таких проектов — тоже не ясно. А что вы думаете?
+    </p>
+    
+    <p class="graf graf--p" style="text-align: left;">
+      </div> </div> </section> <section class="section section--body"> 
+      
+      <div class="section-divider">
+        <hr class="section-divider" />
+      </div>
+      
+      <div class="section-content">
+        <div class="section-inner sectionLayout--insetColumn">
+          <p class="graf graf--p">
+            Далее пишу, как я вижу основной кейс использования сей разработки:
+          </p>
+          
+          <ol class="postList">
+            <li class="graf graf--li">
+              Разработчик скачивает себе пакет-инсталятор, запускает.
+            </li>
+            <li class="graf graf--li">
+              В результате установки у него на машине появляется:
+            </li>
+          </ol>
+          
+          <ul class="postList">
+            <li class="graf graf--li">
+              IDE с projectional editor для работы с платформой разработки
+            </li>
+            <li class="graf graf--li">
+              Встроенную в неё Distributed-VCS, которая помнит все изменения семантики кода (все изменения дерева). Присутствуют все базовые операции (pull, commit, push, new branch, merge)
+            </li>
+            <li class="graf graf--li">
+              Компилятор, дебагер
+            </li>
+            <li class="graf graf--li">
+              В IDE при открытии проекта показываются не файлы и каталоги, а дерево — семантическая структура модулей. Как по факту это будет храниться на диске — не доступно разработчику. Пускай это будет всего-навсего один файл — почему бы и нет? Если какой-то хитрец всё таки залезет и попытается его поредактировать — сбилдить или закоммитить эти изменения уже не будет позволено.
+            </li>
+            <li class="graf graf--li">
+              Визуально код в редакторе будет отображаться скорее всего ближе к урезанному C#, либо другому язык со строгой статической типизацией (возможно и утиная подойдет, тут можно много подумать). Интересная возможность проекционных редакторов — скрывать ненужные подробности (например типы, или реализацию каких-то методов). Например в одном окне вы видите Hi-Level архитектуру, а в другом (смотря на ту же область дерева) — более подробную low-level реализацию.
+            </li>
+          </ul>
+          
+          <p class="graf graf--p">
+            Основная проблема, которая тут возникает — юзабилити этого редактора. Так как мы запрещаем пользователю вводить невалидный синтаксис, набор возможных действий (по сравнению с обычным редактированием текста) резко сокращается. Эту проблему немного раскрывает чувак с <a class="markup--anchor markup--p-anchor" href="http://unisonweb.org/2015-10-14/fluent-editing.html" target="_blank" rel="noopener" data-href="http://unisonweb.org/2015-10-14/fluent-editing.html">Unison</a> и собственно разработчики JetBrains MPS (там не супер круто, но всё равно довольно удобно). Проблемы с юзабилити возможно опишу в отдельном посте, но было бы интереснее провести реальный эксперимент.
+          </p>
+          
+          <p class="graf graf--p">
+            Вы бы воспользовались такой платформой для ежедневной разработки?
+          </p>
+          
+          <p class="graf graf--p">
+            Жду ваши фидбэки отовсюду: прямо здесь, в ВК: https://vk.com/nikita.vanyasin или по почте. Или WhatsAPP, SMS, ICQ. Или за стаканом пиваса. Или сидя на катамаране в традиционном майском сплаве.
+          </p><figure class="graf graf--figure">
+          
+          <img class="graf-image aligncenter" src="https://cdn-images-1.medium.com/max/1000/0*u47LJwAfj3LxorxC.jpg" data-image-id="0*u47LJwAfj3LxorxC.jpg" data-width="400" data-height="400" /></figure>
+        </div>
+      </div></section>
+
+            </div>
+            <hr>
+            <div class="related-posts">
+              <h5>Related Posts</h5>
+              
+                <div class="row">
+                  <div class="col-sm-4 col-md-4 col-lg-4">
+                    <h6 style="text-align: right">
+                      December 26, 2018
+                    </h6>
+                  </div>
+                  <div class="col-sm-8 col-md-8 col-lg-8">
+                    <h6 style="text-align: left">
+                      <strong><a href="/year-2018/">Итоги года 2018</a></strong>
+                    </h6>
+                  </div>
+                </div>
+              
+            </div>
+          </div>
+          <hr>
+        
+  <div class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+
+      (function() {
+        
+        
+        if (window.location.hostname == "localhost")
+          return;
+
+        var disqus_shortname = 'codemorass';
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a></p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://nikita-vanyasin.github.io/js/docs.min.js"></script>
+<script src="https://nikita-vanyasin.github.io/js/main.js"></script>
+
+<script src="https://nikita-vanyasin.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

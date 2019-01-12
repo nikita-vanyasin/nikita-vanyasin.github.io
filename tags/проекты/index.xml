@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Проекты on Nikita Vanyasin, Software Engineer</title>
+    <link>https://nikita-vanyasin.github.io/tags/%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B/</link>
+    <description>Recent content in Проекты on Nikita Vanyasin, Software Engineer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 26 Dec 2018 19:00:08 +0000</lastBuildDate>
+    
+	<atom:link href="https://nikita-vanyasin.github.io/tags/%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Итоги года 2018</title>
+      <link>https://nikita-vanyasin.github.io/year-2018/</link>
+      <pubDate>Wed, 26 Dec 2018 19:00:08 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/year-2018/</guid>
+      <description>Кратко итоги, просто для летописи.
+&amp;nbsp;
+&amp;nbsp;
+Чуток продвинул английский С мая по сентябрь я ходил в школу английского языка &amp;#171;Чаша&amp;#187;. Брал два курса: грамматика и общение с нативным спикером на тему business vocabulary in use. Оба курса понравились. Первый &amp;#8212; освежил в памяти правила и дал попрактиковаться, второй &amp;#8212; интересный опыт общения с коренным британцем. Узнал много нового про бизнес-культуру на Западе.
+Ещё побывал в Англии, где 5 недель провёл в языковой школе.</description>
+    </item>
+    
+    <item>
+      <title>Projectional editing</title>
+      <link>https://nikita-vanyasin.github.io/code-morass-editor/</link>
+      <pubDate>Thu, 16 Mar 2017 19:55:58 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/code-morass-editor/</guid>
+      <description>Всем привет.  Это пост для тех, кто каждый день пишет код. Как вы вероятно знаете, я таки аспирант. Аспиранты в аспирантуре делают полезные дела и придумывают всякие безумные штуки, чтобы защитить кандидатскую диссертацию (зачем они это делают — тема для отдельного поста). (о воинской обязанности в России) Короче. Обычно люди не охотно делают то, что никому не нужно. А я не знаю, нужен ли мой проект кому-то. Поэтому пишу этот пост в первую очередь, чтобы собрать фидбек.</description>
+    </item>
+    
+  </channel>
+</rss>

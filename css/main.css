@@ -123,10 +123,6 @@ html, body {
 .panel{
   border-style: none;
 }
-.panel-body {
-  padding-top: -10px;
-  text-align: left;
-}
 .social-links {
   display: block;
   margin: 0 auto;
@@ -173,6 +169,31 @@ html, body {
   text-align: left;
   line-height: 30px;
   font-size: 18px;
+  padding-bottom: 40px;
+}
+
+.blogpost h1,
+.blogpost h2,
+.blogpost h3,
+.blogpost h4,
+.blogpost h5 {
+  font-weight: bold;
+}
+
+.blogpost td,
+.blogpost th {
+  border: 1px solid #666666;
+  padding: 10px;
+}
+
+.panel-body {
+  text-align: center;
+}
+
+.panel-body .featured_image {
+  padding-top: 100px;
+  max-width: 100%;
+  padding-bottom: 40px;
 }
 
 /* Footer  */

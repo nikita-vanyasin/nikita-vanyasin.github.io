@@ -6,10 +6,57 @@
     <description>Recent content on Nikita Vanyasin, Software Engineer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 02 Oct 2016 22:55:05 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 26 Dec 2018 19:00:08 +0000</lastBuildDate>
     
 	<atom:link href="https://nikita-vanyasin.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Итоги года 2018</title>
+      <link>https://nikita-vanyasin.github.io/year-2018/</link>
+      <pubDate>Wed, 26 Dec 2018 19:00:08 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/year-2018/</guid>
+      <description>Кратко итоги, просто для летописи.
+&amp;nbsp;
+&amp;nbsp;
+Чуток продвинул английский С мая по сентябрь я ходил в школу английского языка &amp;#171;Чаша&amp;#187;. Брал два курса: грамматика и общение с нативным спикером на тему business vocabulary in use. Оба курса понравились. Первый &amp;#8212; освежил в памяти правила и дал попрактиковаться, второй &amp;#8212; интересный опыт общения с коренным британцем. Узнал много нового про бизнес-культуру на Западе.
+Ещё побывал в Англии, где 5 недель провёл в языковой школе.</description>
+    </item>
+    
+    <item>
+      <title>Как я съездил в языковую школу в Лондон</title>
+      <link>https://nikita-vanyasin.github.io/%D0%BA%D0%B0%D0%BA-%D1%8F-%D1%81%D1%8A%D0%B5%D0%B7%D0%B4%D0%B8%D0%BB-%D0%B2-%D1%8F%D0%B7%D1%8B%D0%BA%D0%BE%D0%B2%D1%83%D1%8E-%D1%88%D0%BA%D0%BE%D0%BB%D1%83-%D0%B2-%D0%BB%D0%BE%D0%BD%D0%B4%D0%BE%D0%BD/</link>
+      <pubDate>Sat, 22 Dec 2018 18:17:08 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/%D0%BA%D0%B0%D0%BA-%D1%8F-%D1%81%D1%8A%D0%B5%D0%B7%D0%B4%D0%B8%D0%BB-%D0%B2-%D1%8F%D0%B7%D1%8B%D0%BA%D0%BE%D0%B2%D1%83%D1%8E-%D1%88%D0%BA%D0%BE%D0%BB%D1%83-%D0%B2-%D0%BB%D0%BE%D0%BD%D0%B4%D0%BE%D0%BD/</guid>
+      <description>Небольшой отчёт-заметка. Прохладные истории прилагаются
+https://telegra.ph/Kak-ya-sezdil-v-yazykovuyu-shkolu-v-London-12-18</description>
+    </item>
+    
+    <item>
+      <title>Projectional editing</title>
+      <link>https://nikita-vanyasin.github.io/code-morass-editor/</link>
+      <pubDate>Thu, 16 Mar 2017 19:55:58 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/code-morass-editor/</guid>
+      <description>Всем привет.  Это пост для тех, кто каждый день пишет код. Как вы вероятно знаете, я таки аспирант. Аспиранты в аспирантуре делают полезные дела и придумывают всякие безумные штуки, чтобы защитить кандидатскую диссертацию (зачем они это делают — тема для отдельного поста). (о воинской обязанности в России) Короче. Обычно люди не охотно делают то, что никому не нужно. А я не знаю, нужен ли мой проект кому-то. Поэтому пишу этот пост в первую очередь, чтобы собрать фидбек.</description>
+    </item>
+    
+    <item>
+      <title>HighLoad 2016</title>
+      <link>https://nikita-vanyasin.github.io/highload-2016/</link>
+      <pubDate>Thu, 10 Nov 2016 11:15:16 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/highload-2016/</guid>
+      <description>Был на многих докладах, но в этот раз опишу только то, что реально может пригодится или просто показалось интересным.
+&amp;nbsp;
+1 Инфраструктура распределенных node js приложений, Rambler
+ Можно использовать pm2 deploy для деплоинга Нормально описал, как Docker использовать с node js, выглядит очень просто. Используют консул для service discovery, можно быстро распростронять конфиги при помощи key-value хранилища  &amp;nbsp;
+&amp;nbsp;
+2 Митап по текущему состоянию WebRTC стека
+Flussonic – очень мощные чуваки, постоянно сидели в комнате для митапов, я был на двух (третий был про Erlang).</description>
+    </item>
     
     <item>
       <title>Experience</title>
@@ -21,48 +68,323 @@
     </item>
     
     <item>
-      <title>Creating a New Theme</title>
-      <link>https://nikita-vanyasin.github.io/blog/creating-a-new-theme/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      <title>Конференция «Российские Интернет Технологии — 2016»</title>
+      <link>https://nikita-vanyasin.github.io/%D0%BA%D0%BE%D0%BD%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D1%8F-%D1%80%D0%B8%D1%82-2016/</link>
+      <pubDate>Sat, 04 Jun 2016 09:31:03 +0000</pubDate>
       
-      <guid>https://nikita-vanyasin.github.io/blog/creating-a-new-theme/</guid>
-      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
-We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+      <guid>https://nikita-vanyasin.github.io/%D0%BA%D0%BE%D0%BD%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D1%8F-%D1%80%D0%B8%D1%82-2016/</guid>
+      <description>Проходило всё в бизнес-школе Сколково, довольно забавное место.
+ День 1 &amp;nbsp;
+1. NoSQL &amp;#8212; Неспроста ли это &amp;#171;ЖЖЖ&amp;#187;? (Даниил Подольский, inCaller.org) Доклад о самых базовых принципах NoSQL, разновидностях и минусах использования.
+Общий вывод &amp;#8212; не стоит использовать NoSQL только потому что это модно. В 99% случаях классический SQL-подход впишется гораздо лучше.
+Из интересного:
+ Докладчик заявил, что MySQL можно настроить на 100 тысяч апдейтов в секунду. Надо поисследовать вопрос.</description>
     </item>
     
     <item>
-      <title>(Hu)go Template Primer</title>
-      <link>https://nikita-vanyasin.github.io/blog/goisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <title>Роджер Сайп. Развитие мозга</title>
+      <link>https://nikita-vanyasin.github.io/%D1%80%D0%BE%D0%B4%D0%B6%D0%B5%D1%80-%D1%81%D0%B0%D0%B9%D0%BF-%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D0%B5-%D0%BC%D0%BE%D0%B7%D0%B3%D0%B0/</link>
+      <pubDate>Fri, 19 Feb 2016 18:55:20 +0000</pubDate>
       
-      <guid>https://nikita-vanyasin.github.io/blog/goisforlovers/</guid>
-      <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
-This document is a brief primer on using go templates.</description>
+      <guid>https://nikita-vanyasin.github.io/%D1%80%D0%BE%D0%B4%D0%B6%D0%B5%D1%80-%D1%81%D0%B0%D0%B9%D0%BF-%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D0%B5-%D0%BC%D0%BE%D0%B7%D0%B3%D0%B0/</guid>
+      <description>&amp;nbsp;
+В целом книжка мутноватая (особенно в начале), но несколько техник выписал:
+ Ускорение чтения: возьмите пластиковую карточку или кусок бумаги, и ведите им по только что прочитанному тексту. Мозг будет более внимательно следить за сутью текста, так как поймет, что не получиться вернуться обратно и перечитать. Матрица Эйзенхауэра: спрашивайте себя, задачами/делами из какого квадрата вы сейчас занимаетесь?
+  Квадрат 1   Важные и срочные
+Примеры: инфаркт, приближение дедлайна, подача налоговой декларации</description>
     </item>
     
     <item>
-      <title>Getting Started with Hugo</title>
-      <link>https://nikita-vanyasin.github.io/blog/hugoisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <title>Scrum</title>
+      <link>https://nikita-vanyasin.github.io/scrum-ispring-web/</link>
+      <pubDate>Tue, 02 Feb 2016 10:48:15 +0000</pubDate>
       
-      <guid>https://nikita-vanyasin.github.io/blog/hugoisforlovers/</guid>
-      <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
-Save it somewhere specific as we will be using it in the next step.
-More complete instructions are available at installing hugo
-Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
-Follow the following steps:
- Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
+      <guid>https://nikita-vanyasin.github.io/scrum-ispring-web/</guid>
+      <description>Джеф Сазерленд. SCRUM. Революционный метод управления проектами
+&amp;nbsp;
+Идеи из книжки, которые показались наиболее актуальными. Получилось что-то очень уж много пунктов, больше похоже на конспект книжки. Курсивом выделены цитаты из книжки.
+ Постоянство применения инструментов SCRUM &amp;#8212; сейчас некоторые компоненты (например демонстрация) могут пропасть, а потом снова появиться. Более всего он хотел ускорить процесс, сделать работу групп более динамичной и продуктивной &amp;#8212; но не за счет сверхурочных часов, а при помощи более совершенного и разумного труда.</description>
     </item>
     
     <item>
-      <title>Migrate to Hugo from Jekyll</title>
-      <link>https://nikita-vanyasin.github.io/blog/migrate-from-jekyll/</link>
-      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
+      <title>Прозаичные отказы в технических обсуждениях</title>
+      <link>https://nikita-vanyasin.github.io/%D0%BF%D1%80%D0%BE%D0%B7%D0%B0%D0%B8%D1%87%D0%BD%D1%8B%D0%B5-%D0%BE%D1%82%D0%BA%D0%B0%D0%B7%D1%8B-%D0%B2-%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85-%D0%BE%D0%B1%D1%81%D1%83/</link>
+      <pubDate>Mon, 21 Dec 2015 18:21:48 +0000</pubDate>
       
-      <guid>https://nikita-vanyasin.github.io/blog/migrate-from-jekyll/</guid>
-      <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
-▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
-▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
+      <guid>https://nikita-vanyasin.github.io/%D0%BF%D1%80%D0%BE%D0%B7%D0%B0%D0%B8%D1%87%D0%BD%D1%8B%D0%B5-%D0%BE%D1%82%D0%BA%D0%B0%D0%B7%D1%8B-%D0%B2-%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85-%D0%BE%D0%B1%D1%81%D1%83/</guid>
+      <description>Перевод статьи &amp;#171;Unimaginative naysaying in tech discussions&amp;#171;, Paul Chiusano
+ Это были ранние дни человечества. Прохладный сухой день. Алиса и Боб пытаются развести огонь при помощи палочек, потирая их друг о друга. Учитывая, что за день до этого холодный дождь основательно намочил палки, это было действительно сложно. Неожиданно вспыхивает свет и позади Алисы и Боба открывается таинственный портал. Оттуда выходит Незнакомец, держа в руках паяльную лампу. Незнакомец объясняет, что он пришел из будущего чтобы ускорить технологическое развитие.</description>
+    </item>
+    
+    <item>
+      <title>Paul Graham — Lisp: побеждая посредственность</title>
+      <link>https://nikita-vanyasin.github.io/paul-graham-lisp-%D0%BF%D0%BE%D0%B1%D0%B5%D0%B6%D0%B4%D0%B0%D1%8F-%D0%BF%D0%BE%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D1%8C/</link>
+      <pubDate>Sun, 22 Nov 2015 16:04:37 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/paul-graham-lisp-%D0%BF%D0%BE%D0%B1%D0%B5%D0%B6%D0%B4%D0%B0%D1%8F-%D0%BF%D0%BE%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D1%8C/</guid>
+      <description>&amp;#8230;Мы всегда были впереди конкурентов по функциональности. Иногда, в порыве отчаяния, они пытались добавить новую функцию, которой не было у нас. Однако с Lisp&amp;#8217;ом наш цикл разработки был настолько коротким, что мы могли воспроизвести аналогичную возможность в течение дня или двух после того, как конкурент объявлял о ней в пресс-релизе. К тому моменту, когда журналисты, занимающиеся пресс-релизом, звонили нам, у нас было все то же самое.
+Должно быть, нашим конкурентам казалось, что мы владели неким секретным оружием, например перехватывали их закрытую переписку или что-то в этом роде.</description>
+    </item>
+    
+    <item>
+      <title>HighLoad&#43;&#43; 2015</title>
+      <link>https://nikita-vanyasin.github.io/highload-2015/</link>
+      <pubDate>Thu, 05 Nov 2015 16:38:40 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/highload-2015/</guid>
+      <description>Скатались на конференцию.
+Краткий отчет по докладам, на которых я побывал.
+1) Как выбрать In-Memory NoSQL БД с умом&amp;#8230; &amp;#8212; Д. Калугин-Балашов (Mail.ru)
+Вышел чувак из Mail.ru в ковбойской шляпе, и сообщил что выбирать БД на основе &amp;#171;самая распиаренная&amp;#187; и &amp;#171;друг посоветовал&amp;#187; это не круто и что нужно тестить производительность самому.
+Показал кучу графиков, как он тестил Memcache/Redis/Tarantool/CouchBase.
+Tarantool почти по всем параметрам чуть-чуть обходит Redis. Показалось что доклад именно про это.</description>
+    </item>
+    
+    <item>
+      <title>Maintainability</title>
+      <link>https://nikita-vanyasin.github.io/maintanability/</link>
+      <pubDate>Tue, 27 Oct 2015 06:12:59 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/maintanability/</guid>
+      <description> Технический долг, это долг, который нам приходится выплачивать за наши (плохие) решения. Причем выплачиваем этот долг мы временем и чувством разочарования. Все приложения включают в себя начальный уровень технического долга. Мы вынуждены работать в рамках и с учетом ограничений выбранных нами механизмов хранения данных, языков программирования, фреймворков, команд и организаций! </description>
+    </item>
+    
+    <item>
+      <title>Фейнман: Quote 1</title>
+      <link>https://nikita-vanyasin.github.io/%D1%84%D0%B5%D0%B9%D0%BD%D0%BC%D0%B0%D0%BD-quote-1/</link>
+      <pubDate>Tue, 13 Oct 2015 20:39:11 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/%D1%84%D0%B5%D0%B9%D0%BD%D0%BC%D0%B0%D0%BD-quote-1/</guid>
+      <description>Я сказал брату: «Что ты пытаешься сделать?»
+– Я пытаюсь найти, чему равен х в уравнении 2х + 7 = 15. Я говорю: «Ты имеешь в виду 4».
+– Да, но ты применил арифметику. А его нужно найти с помощью алгебры.
+К счастью, я изучил алгебру, не ходя в школу. На чердаке я нашел старый учебник алгебры, принадлежавший моей тете, и понял, что вся идея состоит в том, чтобы найти х – неважно как.</description>
+    </item>
+    
+    <item>
+      <title>Лавина: Quote 2</title>
+      <link>https://nikita-vanyasin.github.io/%D0%BB%D0%B0%D0%B2%D0%B8%D0%BD%D0%B0-quote-2/</link>
+      <pubDate>Mon, 05 Oct 2015 09:44:29 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/%D0%BB%D0%B0%D0%B2%D0%B8%D0%BD%D0%B0-quote-2/</guid>
+      <description>Франшиза и вирус работают по сходному принципу: то, что благоденствовало в одном месте, будет благоденствовать и в другом. Нужно только составить заразный бизнес-план, ужать его до десятка страниц в папке о трех кольцах — до его ДНК, — отксерить и впрыснуть в придорожную облицовку хайвеев с большим потоком машин, желательно на том участке, где есть левый поворот. Тогда опухоль станет расширяться до тех пор, пока не упрется в границы собственности земельного участка.</description>
+    </item>
+    
+    <item>
+      <title>Лавина: Quote 1</title>
+      <link>https://nikita-vanyasin.github.io/%D0%BB%D0%B0%D0%B2%D0%B8%D0%BD%D0%B0-quote-1/</link>
+      <pubDate>Wed, 30 Sep 2015 21:35:02 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/%D0%BB%D0%B0%D0%B2%D0%B8%D0%BD%D0%B0-quote-1/</guid>
+      <description>Когда Хиро учился писать код, а было это пятнадцать лет назад, хакер мог сам написать программу целиком. Сегодня такое уже невозможно. Программы производят на огромных фабриках, и программисты, кто в большей, кто в меньшей степени, превратились в рабочих у конвейера. Или, хуже того, стали менеджерами, у которых и руки до написания кода не доходят.
+Перспектива стать конвейерным рабочим дает Хиро достаточный стимул пойти сегодня на поиски по-настоящему жареной инфы. Он пытается накрутить себя, вырваться из летаргии долгого безделья.</description>
+    </item>
+    
+    <item>
+      <title>Эссенциализм: Quote 3</title>
+      <link>https://nikita-vanyasin.github.io/%D1%8D%D1%81%D1%81%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%BC-quote-3/</link>
+      <pubDate>Sat, 29 Aug 2015 09:02:51 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/%D1%8D%D1%81%D1%81%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%BC-quote-3/</guid>
+      <description>В своих трудах, посвященных креативности, Михай Чиксентмихайи рассказывает о том, что творческие люди часто соблюдают очень строгий режим, помогающий им освободить сознание. «Большинство творческих людей уже на самом раннем этапе своей карьеры тщательно изу­чают свои ритмы сна, питания и работы и придерживаются их, даже если какие-то другие дела в этот момент кажутся им гораздо более привлекательными, — говорит Чиксентмихайи. — Они носят только удобную одежду, общаются только с близкими по духу людьми, делают только то, что считают необходимым.</description>
+    </item>
+    
+    <item>
+      <title>Эссенциализм: выжимка</title>
+      <link>https://nikita-vanyasin.github.io/%D1%8D%D1%81%D1%81%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%BC-%D0%B2%D1%81%D0%B5-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%87%D0%BA%D0%B8-%D0%B8%D0%B7-%D0%BA%D0%BD%D0%B8%D0%B3%D0%B8/</link>
+      <pubDate>Sat, 29 Aug 2015 08:58:59 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/%D1%8D%D1%81%D1%81%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%BC-%D0%B2%D1%81%D0%B5-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%87%D0%BA%D0%B8-%D0%B8%D0%B7-%D0%BA%D0%BD%D0%B8%D0%B3%D0%B8/</guid>
+      <description>&amp;nbsp;
+    Неэссенциалист   Эссенциалист    Думает  «ВСЕ ДЛЯ ВСЕХ» «Я должен». «Все задачи важны». «Как мне все успеть?»  «МЕНЬШЕ, НО ЛУЧШЕ» «Я выбираю». «Важны лишь некоторые задачи». «Что мне наиболее выгодно?»    Делает  НЕДИСЦИПЛИНИРОВАННЫЙ ПОДХОД: ЖЕЛАНИЕ ДЕЛАТЬ БОЛЬШЕ Реагирует на все источники давления. Соглашается не раздумывая. Пытается сделать приятно всем.  ДИСЦИПЛИНИРОВАННЫЙ ПОДХОД: ЖЕЛАНИЕ ДЕЛАТЬ МЕНЬШЕ Дает себе время подумать над тем, что действительно важно.</description>
+    </item>
+    
+    <item>
+      <title>Эссенциализм: Quote 2</title>
+      <link>https://nikita-vanyasin.github.io/%D1%8D%D1%81%D1%81%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%BC-quote-2/</link>
+      <pubDate>Wed, 26 Aug 2015 14:48:43 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/%D1%8D%D1%81%D1%81%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%BC-quote-2/</guid>
+      <description>Второй шаблон приводит к тому, что команда без цели лишается лидера. В отсутствии четкого направления люди занимаются тем, что удовлетворяет их краткосрочные интересы, не заботясь о том, помогают их действия или, наоборот, вредят решению долгосрочных задач всей команды. Зачастую такие поступки хорошо обдуманы и даже могут быть важными на частном уровне. Но эти проекты часто мешают всей команде и не вносят никакого вклада в общее дело. Подобные команды отступают на пять шагов назад при каждом шаге вперед.</description>
+    </item>
+    
+    <item>
+      <title>Эссенциализм: Quote 1</title>
+      <link>https://nikita-vanyasin.github.io/%D1%8D%D1%81%D1%81%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%BC-quote-1/</link>
+      <pubDate>Fri, 14 Aug 2015 12:36:40 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/%D1%8D%D1%81%D1%81%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%BC-quote-1/</guid>
+      <description>В своей колонке для New York Times Эрин Каллан, бывший финансовый директор банка Lehman Brothers, рассказала, на какие уступки ей пришлось неосознанно идти. Она пишет: «Я сама не поняла, как получилось так, что вся моя жизнь стала посвящена работе. Это происходило постепенно. С каждым годом новые изменения становились нормой. Сначала я проводила в воскресенье полчаса, разбирая почту, список дел и календарь, чтобы облегчить себе утро понедельника. Потом я работала несколько часов в воскресенье, потом целый день.</description>
+    </item>
+    
+    <item>
+      <title>Снова цитата с хабра</title>
+      <link>https://nikita-vanyasin.github.io/%D1%81%D0%BD%D0%BE%D0%B2%D0%B0-%D1%86%D0%B8%D1%82%D0%B0%D1%82%D0%B0-%D1%81-%D1%85%D0%B0%D0%B1%D1%80%D0%B0/</link>
+      <pubDate>Sat, 13 Jun 2015 16:17:43 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/%D1%81%D0%BD%D0%BE%D0%B2%D0%B0-%D1%86%D0%B8%D1%82%D0%B0%D1%82%D0%B0-%D1%81-%D1%85%D0%B0%D0%B1%D1%80%D0%B0/</guid>
+      <description>Студент приходит в какую нибудь контору, там уже построен монстр который рассыпается и нужно через разные места этого монстра поддерживать, а не дай бог еще и развивать. Гавно, палки, костыли, дырки, десять человек вместо двух, и все давно заражены одним из мозговых вирусов программистов. Кстати, большинство юношей все же приходит здоровыми, поэтому мы часто слышим что «неопытные программисты стремятся переписать весь код». Но ему это сделать никто не дает, он привыкает, расслабляется, и пипец, заболел.</description>
+    </item>
+    
+    <item>
+      <title>Никлаус Вирт, Oberon, простота</title>
+      <link>https://nikita-vanyasin.github.io/%D0%BD%D0%B8%D0%BA%D0%BB%D0%B0%D1%83%D1%81-%D0%B2%D0%B8%D1%80%D1%82-oberon-%D0%BF%D1%80%D0%BE%D1%81%D1%82%D0%BE%D1%82%D0%B0/</link>
+      <pubDate>Thu, 14 May 2015 19:27:11 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/%D0%BD%D0%B8%D0%BA%D0%BB%D0%B0%D1%83%D1%81-%D0%B2%D0%B8%D1%80%D1%82-oberon-%D0%BF%D1%80%D0%BE%D1%81%D1%82%D0%BE%D1%82%D0%B0/</guid>
+      <description>Многие люди относятся к стилям и языкам программирования как к религиозным конфессиям: если вы принадлежите к одной из них, то не можете принадлежать к другой. Но это ложная аналогия, и она сознательно поддерживается по причинам коммерческого порядка.
+&amp;nbsp;
+&amp;nbsp;
+&amp;nbsp;
+http://habrahabr.ru/post/257953/
+syntax overhead в языке С</description>
+    </item>
+    
+    <item>
+      <title>Резвый суслик</title>
+      <link>https://nikita-vanyasin.github.io/%D1%80%D0%B5%D0%B7%D0%B2%D1%8B%D0%B9-%D1%81%D1%83%D1%81%D0%BB%D0%B8%D0%BA/</link>
+      <pubDate>Thu, 14 May 2015 19:22:29 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/%D1%80%D0%B5%D0%B7%D0%B2%D1%8B%D0%B9-%D1%81%D1%83%D1%81%D0%BB%D0%B8%D0%BA/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Бжд / подставка для ног</title>
+      <link>https://nikita-vanyasin.github.io/%D0%B1%D0%B6%D0%B4-%D0%BF%D0%BE%D0%B4%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0-%D0%B4%D0%BB%D1%8F-%D0%BD%D0%BE%D0%B3/</link>
+      <pubDate>Wed, 06 May 2015 21:28:08 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/%D0%B1%D0%B6%D0%B4-%D0%BF%D0%BE%D0%B4%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0-%D0%B4%D0%BB%D1%8F-%D0%BD%D0%BE%D0%B3/</guid>
+      <description>Мне кажется, эти чуваки из СанПин дело говорят:
+&amp;#8230;рабочее место пользователя ПЭВМ следует оборудовать подставкой для ног, имеющей ширину не менее 300 мм, глубину не менее 400 мм, регулировку по высоте в пределах до 150 мм и по углу наклона опорной поверхности подставки до 20°. Поверхность подставки должна быть рифленой и иметь по переднему краю бортик высотой 10 мм.</description>
+    </item>
+    
+    <item>
+      <title>Серия статей с habr о “Философии программирования”: Quote 3</title>
+      <link>https://nikita-vanyasin.github.io/%D1%81%D0%B5%D1%80%D0%B8%D1%8F-%D1%81%D1%82%D0%B0%D1%82%D0%B5%D0%B9-%D1%81-habr-%D0%BE-%D1%84%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84%D0%B8%D0%B8-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC/</link>
+      <pubDate>Mon, 04 May 2015 18:26:50 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/%D1%81%D0%B5%D1%80%D0%B8%D1%8F-%D1%81%D1%82%D0%B0%D1%82%D0%B5%D0%B9-%D1%81-habr-%D0%BE-%D1%84%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84%D0%B8%D0%B8-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC/</guid>
+      <description>&amp;#8230; Профессионал же, общается на уровне законченных высказываний, такое общение не требует никакой родственности и вовлечённости, но и высказывания должны быть цельными и законченными. Не «я пытался это сделать, вроде, что-то получается», «ой, Миш, давай потом поговорим, пока ничего не ясно, но вроде готово», а «ситуация на четверг такова: пункты два и три задания 123 выполнены, предполагаемое время полного завершения – следующая пятница», «я столкнулся с непредвиденными сложностями при выполнении пункта 5, обговореный срок исполнения будет сорван».</description>
+    </item>
+    
+    <item>
+      <title>Серия статей с habr о «Философии программирования»: Quote 2</title>
+      <link>https://nikita-vanyasin.github.io/%D1%81%D0%B5%D1%80%D0%B8%D1%8F-%D1%81%D1%82%D0%B0%D1%82%D0%B5%D0%B9-%D1%81-habr-%D0%BE-%D1%84%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84%D0%B8%D0%B8-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8-2/</link>
+      <pubDate>Mon, 04 May 2015 18:17:44 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/%D1%81%D0%B5%D1%80%D0%B8%D1%8F-%D1%81%D1%82%D0%B0%D1%82%D0%B5%D0%B9-%D1%81-habr-%D0%BE-%D1%84%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84%D0%B8%D0%B8-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8-2/</guid>
+      <description>Первый: тоном капитана звездолёта, — нужна функция connectToDB() в главном файле.
+Второй: — открываю — открывает нужный файл, находит функцию.
+Первый: — что здесь происходит?
+Третий: — запускаю — ставит брейкпойнт, запускает приложение, в момент останова произносит: — dbinstance в порядке — выводит значение на экран &amp;#8212;, remotePort равен 8999, — это значение тоже видно на экране.
+Первый: — странно, надо бы профилировать этот вызов.
+Третий: — ок — диктует четвёртому — новая строка 123 console.</description>
+    </item>
+    
+    <item>
+      <title>Серия статей с habr о «философии программирования»: Quote 1</title>
+      <link>https://nikita-vanyasin.github.io/%D1%81%D0%B5%D1%80%D0%B8%D1%8F-%D1%81%D1%82%D0%B0%D1%82%D0%B5%D0%B9-%D1%81-habr-%D0%BE-%D1%84%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84%D0%B8%D0%B8-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8/</link>
+      <pubDate>Mon, 04 May 2015 16:35:47 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/%D1%81%D0%B5%D1%80%D0%B8%D1%8F-%D1%81%D1%82%D0%B0%D1%82%D0%B5%D0%B9-%D1%81-habr-%D0%BE-%D1%84%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84%D0%B8%D0%B8-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8/</guid>
+      <description>http://habrahabr.ru/post/247363/
+Вот, какие-нибудь программисты создали фирму, скажем в Новосибирском Академе, взяли известную старую игрушку для PC, сделали клон для iOS, выкатили в AppStore, и вдруг попёрло, продажи — на уровне птиц. Им позвонили из Тайваня и спросили «можно мы ваш клон симсити вставим в наш клон айпэда как предустановленную игрушку?», блин — это успех! люди думают, что они стали большим бизнесом, закупили шампанское, повесили 3Д графики в опенспейсе, на кайтах катаются, лекции читают студентам об интернет предпринимательстве, это их представление о высокотехнологичном бизнесе.</description>
+    </item>
+    
+    <item>
+      <title>Atari Teenage Riot: Codebreaker</title>
+      <link>https://nikita-vanyasin.github.io/atari-teenage-riot-codebreaker/</link>
+      <pubDate>Mon, 27 Apr 2015 19:29:32 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/atari-teenage-riot-codebreaker/</guid>
+      <description>&amp;#8230; I broke the code, and code broke me.</description>
+    </item>
+    
+    <item>
+      <title>Legacy Code: Note 1</title>
+      <link>https://nikita-vanyasin.github.io/legacy-code-note-1/</link>
+      <pubDate>Mon, 27 Apr 2015 19:11:32 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/legacy-code-note-1/</guid>
+      <description>1  Юнит тесты не являются таковыми, если:
+1) они медленные (лезут в БД, сеть или на диск)
+2) нужно что-то настраивать чтобы их запустить    2  In memory DB    3  Можно немного портить код, если разделив зависимости, можно будет написать тест.
+Это как шрам после хирургической операции    4  fit.c2.com &amp;#8212; Тулза для превращения спеки в Юнит тесты и обратно.</description>
+    </item>
+    
+    <item>
+      <title>Вы, конечно шутите, мистер Фейнман! Quote 1</title>
+      <link>https://nikita-vanyasin.github.io/%D0%B2%D1%8B-%D0%BA%D0%BE%D0%BD%D0%B5%D1%87%D0%BD%D0%BE-%D1%88%D1%83%D1%82%D0%B8%D1%82%D0%B5-%D0%BC%D0%B8%D1%81%D1%82%D0%B5%D1%80-%D1%84%D0%B5%D0%B9%D0%BD%D0%BC%D0%B0%D0%BD-note-1/</link>
+      <pubDate>Sun, 26 Apr 2015 18:28:11 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/%D0%B2%D1%8B-%D0%BA%D0%BE%D0%BD%D0%B5%D1%87%D0%BD%D0%BE-%D1%88%D1%83%D1%82%D0%B8%D1%82%D0%B5-%D0%BC%D0%B8%D1%81%D1%82%D0%B5%D1%80-%D1%84%D0%B5%D0%B9%D0%BD%D0%BC%D0%B0%D0%BD-note-1/</guid>
+      <description>&amp;#8230; А что касается мистера Френкеля, который затеял всю эту деятельность,
+то он начал страдать от компьютерной болезни &amp;#8212; о ней сегодня знает каждый,
+кто работал с компьютерами. Это очень серьезная болезнь, и работать при ней
+невозможно. Беда с компьютерами состоит в том, что ты с ними играешь. Они
+так прекрасны, столько возможностей &amp;#8212; если четное число, делаешь это, если
+нечетное, делаешь то, и очень скоро на одной-единственной машине можно</description>
+    </item>
+    
+    <item>
+      <title>Passionate Programmer: Quote 5</title>
+      <link>https://nikita-vanyasin.github.io/passionate-programme-note-5/</link>
+      <pubDate>Sat, 25 Apr 2015 17:32:56 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/passionate-programme-note-5/</guid>
+      <description>&amp;#8230;Вполне может оказаться, что он получил азы необходимой информации, но больше ничего не знает. Ты спросишь: «А что, если вон тот прибор во время операции начнет пищать?» А он в ответ: «Раньше такого никогда не случалось. Не случится и на этот раз. Я не знаю, что делает этот прибор, но он никогда не пищит».
+&amp;nbsp;
+&amp;nbsp;</description>
+    </item>
+    
+    <item>
+      <title>Passionate Programmer: Quote 4</title>
+      <link>https://nikita-vanyasin.github.io/passionate-programmer-note-4/</link>
+      <pubDate>Sat, 25 Apr 2015 17:32:20 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/passionate-programmer-note-4/</guid>
+      <description>&amp;#8230;Начал я с работы на кафедре информационных технологий нашего университета, куда меня рекомендовал мой друг Вальтер. Он достаточно часто видел, как я работаю за компьютером, и был уверен, что я справлюсь с обязанностями лучше большинства пользователей нашего университета, нуждающихся в помощи. Я в это не верил, так как не имел нужного образования. Я был всего лишь саксофонистом, увлеченным видеоиграми. Но Вальтер заполнил за меня заявление и договорился о собеседовании. Меня взяли, не задав ни одного профессионального вопроса, и мне пришлось сразу приступить к делу.</description>
+    </item>
+    
+    <item>
+      <title>Passionate Programmer: Quote 3</title>
+      <link>https://nikita-vanyasin.github.io/passionate-programmer-note-3/</link>
+      <pubDate>Sat, 25 Apr 2015 17:30:11 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/passionate-programmer-note-3/</guid>
+      <description>&amp;#8230; На вакантные места претендовали тысячи специалистов по Java, и практически никто из них не мог объяснить, как работает загрузчик Java-классов, или рассказать, каким образом виртуальная машина Java обычно осуществляет управление памятью. Разумеется, все эти знания не нужны тем, кто собирается писать базовый код под чужим руководством. Но приходившие на собеседование люди позиционировали себя как специалисты.
+Многие из нас считают, что термин «специализация» означает неумение разбираться в других вещах. Согласно такой трактовке я могу заявить, что моя мать специализируется в Windows, ведь она никогда не работала ни с Linux, ни с OS X.</description>
+    </item>
+    
+    <item>
+      <title>Passionate Programmer: Quote 2</title>
+      <link>https://nikita-vanyasin.github.io/passionate-programmer-note-2/</link>
+      <pubDate>Sat, 25 Apr 2015 17:28:22 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/passionate-programmer-note-2/</guid>
+      <description>В стрессовых ситуациях я часто с нежностью вспоминаю время работы в большой корпорации. Как мой собственный офис, так и огромная иерархия руководителей позволяли мне чувствовать себя комфортно. Тогда мы шутили, что в большой компании умный человек может устроиться так, чтобы почти ничего не делать. В большинстве случаев вина за провал проекта ложилась на такое количество людей, распределенных по такому количеству уровней корпоративной иерархии, что было сложно понять, где же конкретно произошел сбой.</description>
+    </item>
+    
+    <item>
+      <title>Passionate Programmer: Quote 1</title>
+      <link>https://nikita-vanyasin.github.io/passionate-programmer-note-1/</link>
+      <pubDate>Sat, 25 Apr 2015 17:26:52 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/passionate-programmer-note-1/</guid>
+      <description>Первое, что удивило меня, когда я начал заниматься информационными технологиями, — это количество неплохо образованных программистов (у меня даже создалось впечатление, что таких большинство), не имеющих понятия о том, как настраивается система, которую они разрабатывают и развертывают. Мне приходилось сотрудничать с разработчиками, не способными установить на компьютер операционную систему, я уж молчу про настройку сервера, на котором они разворачивали свои приложения. Редко можно встретить разработчика, действительно разбирающегося в платформе, на которой он работает.</description>
+    </item>
+    
+    <item>
+      <title>Does it looks like your software architecture?</title>
+      <link>https://nikita-vanyasin.github.io/hello-world/</link>
+      <pubDate>Fri, 27 Mar 2015 20:14:03 +0000</pubDate>
+      
+      <guid>https://nikita-vanyasin.github.io/hello-world/</guid>
+      <description>Хорошее, годное болото.
+Похоже на архитектуру вашего ПО?
+&amp;nbsp;
+morass &amp;#8212; /məˈras/    1. an area of muddy or boggy ground.    2. a complicated or confused situation.  </description>
     </item>
     
   </channel>
