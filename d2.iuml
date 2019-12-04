@@ -1,0 +1,76 @@
+@startuml
+skinparam defaultFontName Courier
+skinparam monochrome true
+skinparam shadowing false
+
+
+abstract class CodeNode {
+        Comment *Comment
+        Parent *CodeNode
+}
+
+
+abstract class Declaration {
+
+}
+
+abstract class Statement {
+
+}
+
+abstract class Expression {
+
+}
+
+class VarDecl {}
+class ConstDecl  {}
+class TypeDecl      {}
+class FuncDecl         {}
+
+class AssignStmt   {}
+class ExprStmt       {}
+class GoStmt           {}
+class DeferStmt          {}
+class ReturnStmt           {}
+class IfStmt                 {}
+class BlockStmt                {}
+class ForStmt                    {}
+class RangeStmt                    {}
+
+class FuncCallExpr                    {}
+class UnaryExpr                         {}
+class BinaryExpr                          {}
+class IndexedAccessExpr                     {}
+class StarExpr                                {}
+class LitExpr                                   {}
+class ParenthesisExpr                             {}
+
+
+CodeNode <|-- Declaration
+CodeNode <|-- Statement
+CodeNode <|-- Expression
+
+Declaration <|-- VarDecl
+Declaration <|-- ConstDecl
+Declaration <|-- TypeDecl
+Declaration <|-- FuncDecl
+
+Statement <|-- AssignStmt   
+Statement <|-- ExprStmt       
+Statement <|-- GoStmt           
+Statement <|-- DeferStmt          
+Statement <|-- ReturnStmt           
+Statement <|-- IfStmt                 
+Statement <|-- BlockStmt                
+Statement <|-- ForStmt                    
+Statement <|-- RangeStmt                    
+
+Expression <|-- FuncCallExpr                    
+Expression <|-- UnaryExpr                         
+Expression <|-- BinaryExpr                          
+Expression <|-- IndexedAccessExpr                     
+Expression <|-- StarExpr                                
+Expression <|-- LitExpr                                  
+Expression <|-- ParenthesisExpr                       
+
+@enduml
