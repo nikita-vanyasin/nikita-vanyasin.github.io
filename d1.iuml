@@ -1,7 +1,56 @@
 @startuml
-Class01 <|-- Class02
-Class03 *-- Class04
-Class05 o-- Class06
-Class07 .. Class08
-Class09 -- Class10
+skinparam defaultFontName Courier
+skinparam monochrome true
+skinparam shadowing false
+
+class Project {
+	RootPackage    *Package
+	BuildArtifacts []BuildArtifact
+	Name           string
+}
+
+class BuildArtifact  {
+	BuildPackageName string
+	BuildArgs        []string
+	LinkerArgs       []string
+	OutputFile       string
+}
+
+class Package {
+	Name     string
+	Children []*Package
+	Files    []*SourceFile
+	Parent   *Package
+}
+                 
+class SourceFile {
+	Name     string
+	Language string
+	Package  *Package
+
+	Imports      []PackageImport
+	Declarations []Declaration
+}
+
+class Import {
+	Pkg *Package
+}
+
+class ExternalImport {
+	PathName string
+}
+
+interface PackageImport {
+
+}
+
+              
+
+Project o-- Package
+Project *-- BuildArtifact
+Package *-- SourceFile
+SourceFile *-- PackageImport
+PackageImport <|-- Import
+PackageImport <|-- ExternalImport
+
 @enduml
