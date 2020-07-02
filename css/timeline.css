@@ -35,6 +35,7 @@
 .experience_container a
 {
     color: #50585F;
+    text-decoration: underline;
 }
 
 .experience_container a:hover

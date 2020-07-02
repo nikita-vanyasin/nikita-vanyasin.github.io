@@ -8,7 +8,7 @@
     <meta name="description" content="Nikita Vanyasin - Software Engineer">
     <link rel="shortcut icon" type="image/x-icon" href="https://nikita-vanyasin.github.io/img/favicon.ico">
     <title>Legacy Code: Note 1</title>
-    <meta name="generator" content="Hugo 0.38-DEV" />
+    <meta name="generator" content="Hugo 0.73.0" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://nikita-vanyasin.github.io/css/main.css" />
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
@@ -22,14 +22,17 @@
 		<![endif]-->
 
     
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-65207644-2', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-65207644-2', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
   </head>
@@ -81,147 +84,90 @@ ga('send', 'pageview');
           <div class="panel-body">
             
             <div class="blogpost">
-              <table width="486">
-  <tr>
-    <td width="64">
-      1
-    </td>
-    
-    <td width="422">
-      Юнит тесты не являются таковыми, если:<br /> 1) они медленные (лезут в БД, сеть или на диск)<br /> 2) нужно что-то настраивать чтобы их запустить
-    </td>
-  </tr>
-  
-  <tr>
-    <td width="64">
-      2
-    </td>
-    
-    <td width="422">
-      In memory DB
-    </td>
-  </tr>
-  
-  <tr>
-    <td width="64">
-      3
-    </td>
-    
-    <td width="422">
-      Можно немного портить код, если разделив зависимости, можно будет написать тест.<br /> Это как шрам после хирургической операции
-    </td>
-  </tr>
-  
-  <tr>
-    <td width="64">
-      4
-    </td>
-    
-    <td width="422">
-      fit.c2.com &#8212; Тулза для превращения спеки в Юнит тесты и обратно. Устарела, но возможно есть аналоги
-    </td>
-  </tr>
-  
-  <tr>
-    <td width="64">
-      5
-    </td>
-    
-    <td width="422">
-      Если совсем всё плохо &#8212; каждый день убирайте глобальную переменную из кода
-    </td>
-  </tr>
-  
-  <tr>
-    <td width="64">
-      6
-    </td>
-    
-    <td width="422">
-      Просто напоминалка: Command/Query Separation
-    </td>
-  </tr>
-  
-  <tr>
-    <td width="64">
-      7
-    </td>
-    
-    <td width="422">
-      Если пишите тесты &#8212; не усердствуйте с final, т.к. он в 99% случаев затрудняет тестирование
-    </td>
-  </tr>
-  
-  <tr>
-    <td width="64">
-      8
-    </td>
-    
-    <td width="422">
-      Scratch Refactoring
-    </td>
-  </tr>
-  
-  <tr>
-    <td width="64">
-      9
-    </td>
-    
-    <td width="422">
-      Naked CRC
-    </td>
-  </tr>
-  
-  <tr>
-    <td width="64">
-      10
-    </td>
-    
-    <td width="422">
-      В каждой команде должен быть человек или набор людей которые отвечают за архитектуру, а не так что все пишут что хотят.
-    </td>
-  </tr>
-  
-  <tr>
-    <td width="64">
-      11
-    </td>
-    
-    <td width="422">
-      Архитектуру каждого проекта нужно описать коротким описанием: Story
-    </td>
-  </tr>
-  
-  <tr>
-    <td width="64">
-      12
-    </td>
-    
-    <td width="422">
-      Очевидный способ протестировать сложный нетестируемый метод:<br /> вынести тело в объект и тестировать его
-    </td>
-  </tr>
-  
-  <tr>
-    <td width="64">
-      13
-    </td>
-    
-    <td width="422">
-      Feature Sketch: какие поля используются в методах ? &#8212; Разделение responsibilities
-    </td>
-  </tr>
-  
-  <tr>
-    <td width="64">
-      14
-    </td>
-    
-    <td width="422">
-      Pair programming: правка Legacy Code это как операция. А хирурги никогда не оперируют в одиночку
-    </td>
-  </tr>
-</table>
+              <!-- raw HTML omitted -->
+<pre><code>&lt;td width=&quot;422&quot;&gt;
+  Юнит тесты не являются таковыми, если:&lt;br /&gt; 1) они медленные (лезут в БД, сеть или на диск)&lt;br /&gt; 2) нужно что-то настраивать чтобы их запустить
+&lt;/td&gt;
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>&lt;td width=&quot;422&quot;&gt;
+  In memory DB
+&lt;/td&gt;
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>&lt;td width=&quot;422&quot;&gt;
+  Можно немного портить код, если разделив зависимости, можно будет написать тест.&lt;br /&gt; Это как шрам после хирургической операции
+&lt;/td&gt;
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>&lt;td width=&quot;422&quot;&gt;
+  fit.c2.com &amp;#8212; Тулза для превращения спеки в Юнит тесты и обратно. Устарела, но возможно есть аналоги
+&lt;/td&gt;
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>&lt;td width=&quot;422&quot;&gt;
+  Если совсем всё плохо &amp;#8212; каждый день убирайте глобальную переменную из кода
+&lt;/td&gt;
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>&lt;td width=&quot;422&quot;&gt;
+  Просто напоминалка: Command/Query Separation
+&lt;/td&gt;
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>&lt;td width=&quot;422&quot;&gt;
+  Если пишите тесты &amp;#8212; не усердствуйте с final, т.к. он в 99% случаев затрудняет тестирование
+&lt;/td&gt;
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>&lt;td width=&quot;422&quot;&gt;
+  Scratch Refactoring
+&lt;/td&gt;
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>&lt;td width=&quot;422&quot;&gt;
+  Naked CRC
+&lt;/td&gt;
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>&lt;td width=&quot;422&quot;&gt;
+  В каждой команде должен быть человек или набор людей которые отвечают за архитектуру, а не так что все пишут что хотят.
+&lt;/td&gt;
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>&lt;td width=&quot;422&quot;&gt;
+  Архитектуру каждого проекта нужно описать коротким описанием: Story
+&lt;/td&gt;
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>&lt;td width=&quot;422&quot;&gt;
+  Очевидный способ протестировать сложный нетестируемый метод:&lt;br /&gt; вынести тело в объект и тестировать его
+&lt;/td&gt;
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>&lt;td width=&quot;422&quot;&gt;
+  Feature Sketch: какие поля используются в методах ? &amp;#8212; Разделение responsibilities
+&lt;/td&gt;
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>&lt;td width=&quot;422&quot;&gt;
+  Pair programming: правка Legacy Code это как операция. А хирурги никогда не оперируют в одиночку
+&lt;/td&gt;
+</code></pre>
+<!-- raw HTML omitted -->
 
             </div>
             <hr>

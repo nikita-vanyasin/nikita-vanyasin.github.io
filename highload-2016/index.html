@@ -8,7 +8,7 @@
     <meta name="description" content="Nikita Vanyasin - Software Engineer">
     <link rel="shortcut icon" type="image/x-icon" href="https://nikita-vanyasin.github.io/img/favicon.ico">
     <title>HighLoad 2016</title>
-    <meta name="generator" content="Hugo 0.38-DEV" />
+    <meta name="generator" content="Hugo 0.73.0" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://nikita-vanyasin.github.io/css/main.css" />
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
@@ -22,14 +22,17 @@
 		<![endif]-->
 
     
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-65207644-2', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-65207644-2', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
   </head>
@@ -82,39 +85,24 @@ ga('send', 'pageview');
             
             <div class="blogpost">
               <p>Был на многих докладах, но в этот раз опишу только то, что реально может пригодится или просто показалось интересным.</p>
-
-<p>&nbsp;</p>
-
+<p> </p>
 <p><strong>1 Инфраструктура распределенных node js приложений, Rambler</strong></p>
-
 <ul>
 <li>Можно использовать pm2 deploy для деплоинга</li>
 <li>Нормально описал, как Docker использовать с node js, выглядит очень просто.</li>
 <li>Используют консул для service discovery, можно быстро распростронять конфиги при помощи key-value хранилища</li>
 </ul>
-
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>
-
+<p> </p>
+<p> </p>
 <p><strong>2 Митап по текущему состоянию WebRTC стека</strong></p>
-
 <p>Flussonic – очень мощные чуваки, постоянно сидели в комнате для митапов, я был на двух (третий был про Erlang). Тоже из России. Основная специализация – кастомные разработки по трансляции и записи видео для разных клиентов (в основном IP-камеры для систем слежения). Разработали свой медиа-сервер, аналог Curento. Всё на Erlang. Очень его хвалили за скорость и параллельность</p>
-
 <p>Назвали Curento одним из лучших опен-сурс решений из коробки в этой области, но все равно советовали сделать свою систему.</p>
-
 <p>В основном обсуждали очень низко уровневые детали протокола установки P2P соединения в браузерах и реализацию секурности.</p>
-
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>
-
+<p> </p>
+<p> </p>
 <p><strong>3 Введение в архитектуры нейронных сетей</strong></p>
-
 <p>Доклад в основном обучающего формата, чувак быстро перечислил очень много способов организации нейронных сетей и закидал полезными ссылками.</p>
-
-<p>Основной вывод &#8212; если хочешь поизучать deep learning, используй английские источники.</p>
-
+<p>Основной вывод — если хочешь поизучать deep learning, используй английские источники.</p>
 <ul>
 <li>GoogleNet 2014</li>
 <li><a href="https://culurciello.github.io/tech/2016/06/04/nets.html">https://culurciello.github.io/</a></li>
@@ -125,101 +113,66 @@ ga('send', 'pageview');
 <li><a href="https://www.tensorflow.org/versions/r0.11/tutorials/seq2seq/index.html">https://www.tensorflow.org/versions/r0.11/tutorials/seq2seq/index.html</a></li>
 <li><a href="https://research.googleblog.com/">https://research.googleblog.com/</a></li>
 </ul>
-
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>
-
-<p><strong>4 Использование GPU для нейронных сетей, VK &#8212; Vinci</strong></p>
-
+<p> </p>
+<p> </p>
+<p><strong>4 Использование GPU для нейронных сетей, VK — Vinci</strong></p>
 <p>Крутой доклад об истории разработки Vinci. Основные выводы:</p>
-
 <ul>
 <li>Просто склонировать код Гугла по сверточным/рекурентным сетям оказалось недостаточно</li>
 <li>Нормально работает только на stable версиях Debian/Ubuntu</li>
 <li>Все GPU неизбежно могут роняют систему, постоянно. Нужен супервайзер.</li>
-<li>GPU &#8212; для широких сеток, CPU &#8212; для узких</li>
+<li>GPU — для широких сеток, CPU — для узких</li>
 <li>Первая версия Vinci была сделана за 24 часа хакатона. Хакатона, Карл!</li>
-<li>Первый релиз в Google Play &#8212; через 2 недели, второе место по популярности после Prisma</li>
+<li>Первый релиз в Google Play — через 2 недели, второе место по популярности после Prisma</li>
 <li>Стек: Torch, Lua, Turbo, NodeJS, Go</li>
-<li>Для того, чтобы фильтры весили меньше (фильтры это по сути обученные сетки &#8212; множество весов и переходов), применили бинаризацию весов.</li>
+<li>Для того, чтобы фильтры весили меньше (фильтры это по сути обученные сетки — множество весов и переходов), применили бинаризацию весов.</li>
 </ul>
-
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>
-
+<p> </p>
+<p> </p>
 <p><strong>5 Битрикс</strong></p>
-
 <p>Чуваки собирают логи и показывают активность пользователей на карте мира.</p>
-
 <p>Оч. чётко. (подобное реализовано в Гугл Аналитике на самом деле)</p>
-
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>
-
+<p> </p>
+<p> </p>
 <p><strong>6 HTTP/2 и JPEG, Akamai</strong></p>
-
 <p>Чувак из германии четко пояснил, почему HTTP/2 это круто и почему  нужно использовать JPEG с прогрессивной разверткой.</p>
-
 <p>Пользователь видит контент быстрее, очевидно.</p>
-
 <p>Мы используем HTTP/2 ?</p>
-
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>
-
+<p> </p>
+<p> </p>
 <p><strong>7 Секурность приложений на Node.JS</strong></p>
-
 <ul>
 <li>Редиректы из URL-параметра</li>
 <li>Можно проверять секурность сторонних либ:
-
 <ul>
 <li>nsp</li>
 <li>snyk</li>
-<li>VeraCode &#8212; платный</li>
-</ul></li>
+<li>VeraCode — платный</li>
+</ul>
+</li>
 <li>Используй CSRF-токены! У нас пока нет таких кейсов на node js</li>
 </ul>
-
-<p>&nbsp;</p>
-
-<p><strong>8 Митап проблемы доставки стримингово видео </strong></p>
-
+<p> </p>
+<p>**8 Митап проблемы доставки стримингово видео **</p>
 <p>Опять ребята из Flussoning.</p>
-
 <p>В основном говорили о GPU, и как оно круто помогает ускорить транскодинг.</p>
-
 <p>Реально помогает. Только нужен супервизор, чтобы поднимать систему когда она падает (а с GPU она падает постоянно).</p>
-
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>
-
+<p> </p>
+<p> </p>
 <p><strong>9 Новые фичи MySQL, Percona</strong></p>
-
 <ul>
-<li>Document Store <a href="http://dev.mysql.com/doc/refman/5.7/en/document-store.html">http://dev.mysql.com/doc/refman/5.7/en/document-store.html</a></li>
+<li>Document Store http://dev.mysql.com/doc/refman/5.7/en/document-store.html</li>
 <li>JSON</li>
-<li>Persistent не нужен. MySQL 5.7 может поддерживать до 70000 переподключений в секунду. Если не может &#8212; увеличьте backlog хотя бы до 200 <a href="http://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_back_log">http://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_back_log</a></li>
+<li>Persistent не нужен. MySQL 5.7 может поддерживать до 70000 переподключений в секунду. Если не может — увеличьте backlog хотя бы до 200 http://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_back_log</li>
 </ul>
-
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>
-
+<p> </p>
+<p> </p>
+<p> </p>
 <p>Ещё: с какого-то большого доклада, куда я попал только под конец, вынес</p>
-
 <ol>
 <li>Нужен TraceId в запросах (впрочем, ничего нового).</li>
 </ol>
-
-<p>&nbsp;</p>
+<p> </p>
 
             </div>
             <hr>
