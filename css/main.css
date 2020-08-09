@@ -96,6 +96,10 @@ html, body {
 .container a:hover {
   color: #267723;
 }
+img {
+  display: block;
+  max-width: 100%;
+}
 .img-responsive {
  display: block;
  height: auto;
