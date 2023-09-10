@@ -6,11 +6,7 @@
     <description>Recent content in Blog on Nikita Vaniasin, Software Engineer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sat, 01 Jan 2022 17:00:08 +0300</lastBuildDate>
-    
-	<atom:link href="https://nikita-vanyasin.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 01 Jan 2022 17:00:08 +0300</lastBuildDate><atom:link href="https://nikita-vanyasin.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Итоги года 2021</title>
       <link>https://nikita-vanyasin.github.io/year-2021/</link>
