@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Conferences on Nikita Vaniasin, Software Engineer</title>
-    <link>https://nikita-vanyasin.github.io/tags/conferences/</link>
+    <link>https://vaniasin.com/tags/conferences/</link>
     <description>Recent content in Conferences on Nikita Vaniasin, Software Engineer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 10 Nov 2016 11:15:16 +0000</lastBuildDate><atom:link href="https://nikita-vanyasin.github.io/tags/conferences/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Nov 2016 11:15:16 +0000</lastBuildDate><atom:link href="https://vaniasin.com/tags/conferences/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HighLoad 2016</title>
-      <link>https://nikita-vanyasin.github.io/highload-2016/</link>
+      <link>https://vaniasin.com/highload-2016/</link>
       <pubDate>Thu, 10 Nov 2016 11:15:16 +0000</pubDate>
       
-      <guid>https://nikita-vanyasin.github.io/highload-2016/</guid>
+      <guid>https://vaniasin.com/highload-2016/</guid>
       <description>Был на многих докладах, но в этот раз опишу только то, что реально может пригодится или просто показалось интересным.
  1 Инфраструктура распределенных node js приложений, Rambler
  Можно использовать pm2 deploy для деплоинга Нормально описал, как Docker использовать с node js, выглядит очень просто. Используют консул для service discovery, можно быстро распростронять конфиги при помощи key-value хранилища    2 Митап по текущему состоянию WebRTC стека
@@ -21,10 +21,10 @@ Flussonic – очень мощные чуваки, постоянно сиде�
     
     <item>
       <title>Конференция «Российские Интернет Технологии — 2016»</title>
-      <link>https://nikita-vanyasin.github.io/%D0%BA%D0%BE%D0%BD%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D1%8F-%D1%80%D0%B8%D1%82-2016/</link>
+      <link>https://vaniasin.com/%D0%BA%D0%BE%D0%BD%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D1%8F-%D1%80%D0%B8%D1%82-2016/</link>
       <pubDate>Sat, 04 Jun 2016 09:31:03 +0000</pubDate>
       
-      <guid>https://nikita-vanyasin.github.io/%D0%BA%D0%BE%D0%BD%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D1%8F-%D1%80%D0%B8%D1%82-2016/</guid>
+      <guid>https://vaniasin.com/%D0%BA%D0%BE%D0%BD%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%86%D0%B8%D1%8F-%D1%80%D0%B8%D1%82-2016/</guid>
       <description>Проходило всё в бизнес-школе Сколково, довольно забавное место.
   День 1  1. NoSQL — Неспроста ли это «ЖЖЖ»? (Даниил Подольский, inCaller.org) Доклад о самых базовых принципах NoSQL, разновидностях и минусах использования.
 Общий вывод — не стоит использовать NoSQL только потому что это модно. В 99% случаях классический SQL-подход впишется гораздо лучше.
@@ -34,10 +34,10 @@ Flussonic – очень мощные чуваки, постоянно сиде�
     
     <item>
       <title>HighLoad&#43;&#43; 2015</title>
-      <link>https://nikita-vanyasin.github.io/highload-2015/</link>
+      <link>https://vaniasin.com/highload-2015/</link>
       <pubDate>Thu, 05 Nov 2015 16:38:40 +0000</pubDate>
       
-      <guid>https://nikita-vanyasin.github.io/highload-2015/</guid>
+      <guid>https://vaniasin.com/highload-2015/</guid>
       <description>Скатались на конференцию.
 Краткий отчет по докладам, на которых я побывал.
 1) Как выбрать In-Memory NoSQL БД с умом… — Д. Калугин-Балашов (Mail.ru)

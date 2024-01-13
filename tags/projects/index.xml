@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>projects on Nikita Vaniasin, Software Engineer</title>
-    <link>https://nikita-vanyasin.github.io/tags/projects/</link>
+    <link>https://vaniasin.com/tags/projects/</link>
     <description>Recent content in projects on Nikita Vaniasin, Software Engineer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 16 Mar 2017 19:55:58 +0000</lastBuildDate><atom:link href="https://nikita-vanyasin.github.io/tags/projects/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Mar 2017 19:55:58 +0000</lastBuildDate><atom:link href="https://vaniasin.com/tags/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Projectional editing</title>
-      <link>https://nikita-vanyasin.github.io/code-morass-editor/</link>
+      <link>https://vaniasin.com/code-morass-editor/</link>
       <pubDate>Thu, 16 Mar 2017 19:55:58 +0000</pubDate>
       
-      <guid>https://nikita-vanyasin.github.io/code-morass-editor/</guid>
+      <guid>https://vaniasin.com/code-morass-editor/</guid>
       <description>Всем привет.  Это пост для тех, кто каждый день пишет код. Как вы вероятно знаете, я таки аспирант. Аспиранты в аспирантуре делают полезные дела и придумывают всякие безумные штуки, чтобы защитить кандидатскую диссертацию (зачем они это делают — тема для отдельного поста). (о воинской обязанности в России) Короче. Обычно люди не охотно делают то, что никому не нужно. А я не знаю, нужен ли мой проект кому-то. Поэтому пишу этот пост в первую очередь, чтобы собрать фидбек.</description>
     </item>
     
