@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Maintainability on Nikita Vaniasin, Software Engineer</title>
+    <link>https://vaniasin.com/maintanability/</link>
+    <description>Recent content in Maintainability on Nikita Vaniasin, Software Engineer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 27 Oct 2015 06:12:59 +0000</lastBuildDate><atom:link href="https://vaniasin.com/maintanability/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
