@@ -1,1 +1,1 @@
-https://nikita-vanyasin.github.io/
+https://vaniasin.com/
