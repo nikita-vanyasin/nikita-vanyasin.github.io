@@ -293,13 +293,17 @@ year-in-post | Nikita Vaniasin, Software Engineer
             <div class="card-columns">
                 <div class="card h-100">
                     
+                    <div class="card-header">
+                        <a href="/year-2021/">
+                            <img src="/blog-content/uploads/2022/01/coffee_kapadokia.jpg" class="card-img-top" alt="Итоги года 2021">
+                        </a>
+                    </div>
+                    
                     <div class="card-body bg-transparent p-4 shadow-sm">
                         <a href="/year-2021/" class="primary-font card-title">
                             <h5 class="card-title bg-transparent" title="Итоги года 2021">Итоги года 2021</h5>
                         </a>
-                        <div class="card-text">
-                            <p>Этот год - весь в этой фотке: несмотря на шероховатости, было вкусно, бодряще и ощущается как начало чего-то нового и светлого, прямо как …</p>
-                        </div>
+                        
                     </div>
                     <div class="mt-auto post-footer bg-transparent py-3">
                         <span class="float-start bg-transparent">Jan 1, 2022</span>
@@ -313,13 +317,17 @@ year-in-post | Nikita Vaniasin, Software Engineer
             <div class="card-columns">
                 <div class="card h-100">
                     
+                    <div class="card-header">
+                        <a href="/year-2020/">
+                            <img src="/blog-content/uploads/2021/01/photo_2021-01-16_16-42-16.jpg" class="card-img-top" alt="Итоги года 2020">
+                        </a>
+                    </div>
+                    
                     <div class="card-body bg-transparent p-4 shadow-sm">
                         <a href="/year-2020/" class="primary-font card-title">
                             <h5 class="card-title bg-transparent" title="Итоги года 2020">Итоги года 2020</h5>
                         </a>
-                        <div class="card-text">
-                            <p>Наконец появилось время подбить итоги и оформить пост. В первую очередь для себя. Когда смотрю на итоги предыдущих лет, хочется шлепать себя в лицо. …</p>
-                        </div>
+                        
                     </div>
                     <div class="mt-auto post-footer bg-transparent py-3">
                         <span class="float-start bg-transparent">Jan 16, 2021</span>
@@ -333,14 +341,17 @@ year-in-post | Nikita Vaniasin, Software Engineer
             <div class="card-columns">
                 <div class="card h-100">
                     
+                    <div class="card-header">
+                        <a href="/year-2018/">
+                            <img src="/blog-content/uploads/2018/12/hf-mone.jpg" class="card-img-top" alt="Итоги года 2018">
+                        </a>
+                    </div>
+                    
                     <div class="card-body bg-transparent p-4 shadow-sm">
                         <a href="/year-2018/" class="primary-font card-title">
                             <h5 class="card-title bg-transparent" title="Итоги года 2018">Итоги года 2018</h5>
                         </a>
-                        <div class="card-text">
-                            <p>Кратко итоги, просто для летописи.
-  Чуток продвинул английский С мая по сентябрь я ходил в школу английского языка «Чаша». Брал два курса: грамматика …</p>
-                        </div>
+                        
                     </div>
                     <div class="mt-auto post-footer bg-transparent py-3">
                         <span class="float-start bg-transparent">Dec 26, 2018</span>
@@ -387,10 +398,14 @@ year-in-post | Nikita Vaniasin, Software Engineer
     </div>
 </div></footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 <script>
-    if (document.body.className.includes("light")) {
+    if (localStorage.getItem("pref-theme") === "dark") {
         document.body.classList.add('dark');
-        localStorage.setItem("pref-theme", 'dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
     }
+
 </script>
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {

@@ -293,14 +293,17 @@ Books | Nikita Vaniasin, Software Engineer
             <div class="card-columns">
                 <div class="card h-100">
                     
+                    <div class="card-header">
+                        <a href="/scrum-ispring-web/">
+                            <img src="/blog-content/uploads/2016/02/scrum-big.png" class="card-img-top" alt="Scrum">
+                        </a>
+                    </div>
+                    
                     <div class="card-body bg-transparent p-4 shadow-sm">
                         <a href="/scrum-ispring-web/" class="primary-font card-title">
                             <h5 class="card-title bg-transparent" title="Scrum">Scrum</h5>
                         </a>
-                        <div class="card-text">
-                            <p>Джеф Сазерленд. SCRUM. Революционный метод управления проектами
- Идеи из книжки, которые показались наиболее актуальными. Получилось что-то очень уж …</p>
-                        </div>
+                        
                     </div>
                     <div class="mt-auto post-footer bg-transparent py-3">
                         <span class="float-start bg-transparent">Feb 2, 2016</span>
@@ -318,9 +321,7 @@ Books | Nikita Vaniasin, Software Engineer
                         <a href="/%D1%8D%D1%81%D1%81%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%BC-%D0%B2%D1%81%D0%B5-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%87%D0%BA%D0%B8-%D0%B8%D0%B7-%D0%BA%D0%BD%D0%B8%D0%B3%D0%B8/" class="primary-font card-title">
                             <h5 class="card-title bg-transparent" title="Эссенциализм: выжимка">Эссенциализм: выжимка</h5>
                         </a>
-                        <div class="card-text">
-                            <p>&nbsp;     Неэссенциалист   Эссенциалист    Думает  «ВСЕ ДЛЯ ВСЕХ» «Я должен». «Все задачи важны». «Как мне все успеть?»  «МЕНЬШЕ, НО ЛУЧШЕ» «Я …</p>
-                        </div>
+                        
                     </div>
                     <div class="mt-auto post-footer bg-transparent py-3">
                         <span class="float-start bg-transparent">Aug 29, 2015</span>
@@ -338,11 +339,7 @@ Books | Nikita Vaniasin, Software Engineer
                         <a href="/legacy-code-note-1/" class="primary-font card-title">
                             <h5 class="card-title bg-transparent" title="Legacy Code: Note 1">Legacy Code: Note 1</h5>
                         </a>
-                        <div class="card-text">
-                            <p>1  Юнит тесты не являются таковыми, если:
-1) они медленные (лезут в БД, сеть или на диск)
-2) нужно что-то настраивать чтобы их запустить    2  In …</p>
-                        </div>
+                        
                     </div>
                     <div class="mt-auto post-footer bg-transparent py-3">
                         <span class="float-start bg-transparent">Apr 27, 2015</span>
@@ -389,10 +386,14 @@ Books | Nikita Vaniasin, Software Engineer
     </div>
 </div></footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 <script>
-    if (document.body.className.includes("light")) {
+    if (localStorage.getItem("pref-theme") === "dark") {
         document.body.classList.add('dark');
-        localStorage.setItem("pref-theme", 'dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
     }
+
 </script>
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {

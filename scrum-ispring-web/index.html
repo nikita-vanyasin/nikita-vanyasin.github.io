@@ -314,6 +314,10 @@ Scrum | Nikita Vaniasin, Software Engineer
             </div>
           </div>
           
+          <div class="featured-image">
+            <img class="img-fluid mx-auto d-block" src="/blog-content/uploads/2016/02/scrum-big.png" alt="Scrum">
+          </div>
+          
           <article class="page-content  p-2">
           <p>Джеф Сазерленд. <strong>SCRUM. Революционный метод управления проектами</strong></p>
 <p> </p>
@@ -351,15 +355,6 @@ Scrum | Nikita Vaniasin, Software Engineer
       <div class="col-sm-12 col-md-12 col-lg-3">
         <div id="stickySideBar" class="sticky-sidebar">
           
-          <aside class="toc">
-              <h5>
-                Table Of Contents
-              </h5>
-              <div class="toc-content">
-                <nav id="TableOfContents"></nav>
-              </div>
-          </aside>
-          
 
           
           <aside class="tags">
@@ -380,11 +375,6 @@ Scrum | Nikita Vaniasin, Software Engineer
                 <li class="list-inline-item text-center">
                   <a target="_blank" href="https://twitter.com/share?text=Scrum&url=https%3a%2f%2fvaniasin.com%2fscrum-ispring-web%2f">
                     <i class="fab fa-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item text-center">
-                  <a target="_blank" href="https://api.whatsapp.com/send?text=Scrum: https%3a%2f%2fvaniasin.com%2fscrum-ispring-web%2f">
-                    <i class="fab fa-whatsapp"></i>
                   </a>
                 </li>
                 <li class="list-inline-item text-center">
@@ -480,10 +470,14 @@ Scrum | Nikita Vaniasin, Software Engineer
     </div>
 </div></footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 <script>
-    if (document.body.className.includes("light")) {
+    if (localStorage.getItem("pref-theme") === "dark") {
         document.body.classList.add('dark');
-        localStorage.setItem("pref-theme", 'dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
     }
+
 </script>
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {

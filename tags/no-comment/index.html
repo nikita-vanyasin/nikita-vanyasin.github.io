@@ -293,13 +293,17 @@ No Comment | Nikita Vaniasin, Software Engineer
             <div class="card-columns">
                 <div class="card h-100">
                     
+                    <div class="card-header">
+                        <a href="/%D1%80%D0%B5%D0%B7%D0%B2%D1%8B%D0%B9-%D1%81%D1%83%D1%81%D0%BB%D0%B8%D0%BA/">
+                            <img src="/blog-content/uploads/2015/05/427_6001.jpg" class="card-img-top" alt="Резвый суслик">
+                        </a>
+                    </div>
+                    
                     <div class="card-body bg-transparent p-4 shadow-sm">
                         <a href="/%D1%80%D0%B5%D0%B7%D0%B2%D1%8B%D0%B9-%D1%81%D1%83%D1%81%D0%BB%D0%B8%D0%BA/" class="primary-font card-title">
                             <h5 class="card-title bg-transparent" title="Резвый суслик">Резвый суслик</h5>
                         </a>
-                        <div class="card-text">
-                            <p></p>
-                        </div>
+                        
                     </div>
                     <div class="mt-auto post-footer bg-transparent py-3">
                         <span class="float-start bg-transparent">May 14, 2015</span>
@@ -317,10 +321,7 @@ No Comment | Nikita Vaniasin, Software Engineer
                         <a href="/%D0%B1%D0%B6%D0%B4-%D0%BF%D0%BE%D0%B4%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0-%D0%B4%D0%BB%D1%8F-%D0%BD%D0%BE%D0%B3/" class="primary-font card-title">
                             <h5 class="card-title bg-transparent" title="Бжд / подставка для ног">Бжд / подставка для ног</h5>
                         </a>
-                        <div class="card-text">
-                            <p>Мне кажется, эти чуваки из СанПин дело говорят:
-…рабочее место пользователя ПЭВМ следует оборудовать подставкой для ног, имеющей ширину не менее 300 …</p>
-                        </div>
+                        
                     </div>
                     <div class="mt-auto post-footer bg-transparent py-3">
                         <span class="float-start bg-transparent">May 6, 2015</span>
@@ -336,11 +337,9 @@ No Comment | Nikita Vaniasin, Software Engineer
                     
                     <div class="card-body bg-transparent p-4 shadow-sm">
                         <a href="/atari-teenage-riot-codebreaker/" class="primary-font card-title">
-                            <h5 class="card-title bg-transparent" title="Atari Teenage Riot: Codebreaker">Atari Teenage Riot: …</h5>
+                            <h5 class="card-title bg-transparent" title="Atari Teenage Riot: Codebreaker">Atari Teenage Riot: Codebreaker</h5>
                         </a>
-                        <div class="card-text">
-                            <p>I broke the code, and code broke me.</p>
-                        </div>
+                        
                     </div>
                     <div class="mt-auto post-footer bg-transparent py-3">
                         <span class="float-start bg-transparent">Apr 27, 2015</span>
@@ -354,13 +353,17 @@ No Comment | Nikita Vaniasin, Software Engineer
             <div class="card-columns">
                 <div class="card h-100">
                     
+                    <div class="card-header">
+                        <a href="/hello-world/">
+                            <img src="/blog-content/uploads/2015/03/the_fortess_by_trollkaruby-d3hp3fw1.jpg" class="card-img-top" alt="Does it looks like your software architecture?">
+                        </a>
+                    </div>
+                    
                     <div class="card-body bg-transparent p-4 shadow-sm">
                         <a href="/hello-world/" class="primary-font card-title">
-                            <h5 class="card-title bg-transparent" title="Does it looks like your software architecture?">Does it looks like your …</h5>
+                            <h5 class="card-title bg-transparent" title="Does it looks like your software architecture?">Does it looks like your software architecture?</h5>
                         </a>
-                        <div class="card-text">
-                            <p>What a nice soggy morass... Does it look like your software architecture? &nbsp; morass &#8212; /məˈras/    1. an area of muddy or boggy ground.    2. …</p>
-                        </div>
+                        
                     </div>
                     <div class="mt-auto post-footer bg-transparent py-3">
                         <span class="float-start bg-transparent">Mar 27, 2015</span>
@@ -407,10 +410,14 @@ No Comment | Nikita Vaniasin, Software Engineer
     </div>
 </div></footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 <script>
-    if (document.body.className.includes("light")) {
+    if (localStorage.getItem("pref-theme") === "dark") {
         document.body.classList.add('dark');
-        localStorage.setItem("pref-theme", 'dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
     }
+
 </script>
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {

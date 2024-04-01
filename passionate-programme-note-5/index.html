@@ -312,6 +312,10 @@ Passionate Programmer: Quote 5 | Nikita Vaniasin, Software Engineer
             </div>
           </div>
           
+          <div class="featured-image">
+            <img class="img-fluid mx-auto d-block" src="/blog-content/uploads/2015/04/look-at-all-the-fucks-i-dont-give-theyre-just-falling-from-the-sky.jpg" alt="Passionate Programmer: Quote 5">
+          </div>
+          
           <article class="page-content  p-2">
           <p>…Вполне может оказаться, что он получил азы необходимой информации, но больше ничего не знает. Ты спросишь: «А что, если вон тот прибор во время операции начнет пищать?» А он в ответ: «Раньше такого никогда не случалось. Не случится и на этот раз. Я не знаю, что делает этот прибор, но он никогда не пищит».</p>
 <p> </p>
@@ -322,15 +326,6 @@ Passionate Programmer: Quote 5 | Nikita Vaniasin, Software Engineer
       </div>
       <div class="col-sm-12 col-md-12 col-lg-3">
         <div id="stickySideBar" class="sticky-sidebar">
-          
-          <aside class="toc">
-              <h5>
-                Table Of Contents
-              </h5>
-              <div class="toc-content">
-                <nav id="TableOfContents"></nav>
-              </div>
-          </aside>
           
 
           
@@ -352,11 +347,6 @@ Passionate Programmer: Quote 5 | Nikita Vaniasin, Software Engineer
                 <li class="list-inline-item text-center">
                   <a target="_blank" href="https://twitter.com/share?text=Passionate%20Programmer%3a%20Quote%205&url=https%3a%2f%2fvaniasin.com%2fpassionate-programme-note-5%2f">
                     <i class="fab fa-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item text-center">
-                  <a target="_blank" href="https://api.whatsapp.com/send?text=Passionate%20Programmer%3a%20Quote%205: https%3a%2f%2fvaniasin.com%2fpassionate-programme-note-5%2f">
-                    <i class="fab fa-whatsapp"></i>
                   </a>
                 </li>
                 <li class="list-inline-item text-center">
@@ -452,10 +442,14 @@ Passionate Programmer: Quote 5 | Nikita Vaniasin, Software Engineer
     </div>
 </div></footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 <script>
-    if (document.body.className.includes("light")) {
+    if (localStorage.getItem("pref-theme") === "dark") {
         document.body.classList.add('dark');
-        localStorage.setItem("pref-theme", 'dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
     }
+
 </script>
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {

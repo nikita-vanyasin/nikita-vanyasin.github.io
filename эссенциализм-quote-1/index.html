@@ -345,15 +345,6 @@ if (!doNotTrack) {
       <div class="col-sm-12 col-md-12 col-lg-3">
         <div id="stickySideBar" class="sticky-sidebar">
           
-          <aside class="toc">
-              <h5>
-                Table Of Contents
-              </h5>
-              <div class="toc-content">
-                
-              </div>
-          </aside>
-          
 
           
           <aside class="tags">
@@ -374,11 +365,6 @@ if (!doNotTrack) {
                 <li class="list-inline-item text-center">
                   <a target="_blank" href="https://twitter.com/share?text=%d0%ad%d1%81%d1%81%d0%b5%d0%bd%d1%86%d0%b8%d0%b0%d0%bb%d0%b8%d0%b7%d0%bc%3a%20Quote%201&url=https%3a%2f%2fvaniasin.com%2f%25D1%258D%25D1%2581%25D1%2581%25D0%25B5%25D0%25BD%25D1%2586%25D0%25B8%25D0%25B0%25D0%25BB%25D0%25B8%25D0%25B7%25D0%25BC-quote-1%2f">
                     <i class="fab fa-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item text-center">
-                  <a target="_blank" href="https://api.whatsapp.com/send?text=%d0%ad%d1%81%d1%81%d0%b5%d0%bd%d1%86%d0%b8%d0%b0%d0%bb%d0%b8%d0%b7%d0%bc%3a%20Quote%201: https%3a%2f%2fvaniasin.com%2f%25D1%258D%25D1%2581%25D1%2581%25D0%25B5%25D0%25BD%25D1%2586%25D0%25B8%25D0%25B0%25D0%25BB%25D0%25B8%25D0%25B7%25D0%25BC-quote-1%2f">
-                    <i class="fab fa-whatsapp"></i>
                   </a>
                 </li>
                 <li class="list-inline-item text-center">
@@ -474,10 +460,14 @@ if (!doNotTrack) {
     </div>
 </div></footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 <script>
-    if (document.body.className.includes("light")) {
+    if (localStorage.getItem("pref-theme") === "dark") {
         document.body.classList.add('dark');
-        localStorage.setItem("pref-theme", 'dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
     }
+
 </script>
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {

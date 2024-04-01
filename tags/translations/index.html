@@ -293,13 +293,17 @@ translations | Nikita Vaniasin, Software Engineer
             <div class="card-columns">
                 <div class="card h-100">
                     
+                    <div class="card-header">
+                        <a href="/%D0%BF%D1%80%D0%BE%D0%B7%D0%B0%D0%B8%D1%87%D0%BD%D1%8B%D0%B5-%D0%BE%D1%82%D0%BA%D0%B0%D0%B7%D1%8B-%D0%B2-%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85-%D0%BE%D0%B1%D1%81%D1%83/">
+                            <img src="/blog-content/uploads/2015/12/33583896983_fbde29f1a0_o.jpg" class="card-img-top" alt="Прозаичные отказы в технических обсуждениях">
+                        </a>
+                    </div>
+                    
                     <div class="card-body bg-transparent p-4 shadow-sm">
                         <a href="/%D0%BF%D1%80%D0%BE%D0%B7%D0%B0%D0%B8%D1%87%D0%BD%D1%8B%D0%B5-%D0%BE%D1%82%D0%BA%D0%B0%D0%B7%D1%8B-%D0%B2-%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85-%D0%BE%D0%B1%D1%81%D1%83/" class="primary-font card-title">
-                            <h5 class="card-title bg-transparent" title="Прозаичные отказы в технических обсуждениях">Прозаичные отказы в …</h5>
+                            <h5 class="card-title bg-transparent" title="Прозаичные отказы в технических обсуждениях">Прозаичные отказы в технических обсуждениях</h5>
                         </a>
-                        <div class="card-text">
-                            <p>Перевод статьи &#171;Unimaginative naysaying in tech discussions&#171;, Paul Chiusano Это были ранние дни человечества. Прохладный сухой день. Алиса и …</p>
-                        </div>
+                        
                     </div>
                     <div class="mt-auto post-footer bg-transparent py-3">
                         <span class="float-start bg-transparent">Dec 21, 2015</span>
@@ -346,10 +350,14 @@ translations | Nikita Vaniasin, Software Engineer
     </div>
 </div></footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 <script>
-    if (document.body.className.includes("light")) {
+    if (localStorage.getItem("pref-theme") === "dark") {
         document.body.classList.add('dark');
-        localStorage.setItem("pref-theme", 'dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
     }
+
 </script>
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {

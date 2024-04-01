@@ -312,6 +312,10 @@ Paul Graham — Lisp: побеждая посредственность | Nikita
             </div>
           </div>
           
+          <div class="featured-image">
+            <img class="img-fluid mx-auto d-block" src="/blog-content/uploads/2015/11/selection_006.png" alt="Paul Graham — Lisp: побеждая посредственность">
+          </div>
+          
           <article class="page-content  p-2">
           <p style="text-align: justify;">
   &#8230;Мы всегда были впереди конкурентов по функциональности. Иногда, в порыве отчаяния, они пытались добавить новую функцию, которой не было у нас. Однако с Lisp&#8217;ом наш цикл разработки был настолько коротким, что мы могли воспроизвести аналогичную возможность в течение дня или двух после того, как конкурент объявлял о ней в пресс-релизе. К тому моменту, когда журналисты, занимающиеся пресс-релизом, звонили нам, у нас было все то же самое.<br /> Должно быть, нашим конкурентам казалось, что мы владели неким секретным оружием, например перехватывали их закрытую переписку или что-то в этом роде. На самом деле у нас было секретное оружие, но гораздо более простое, чем могло показаться. Не было никакой утечки информации. Просто мы могли разрабатывать наш продукт быстрее, чем это казалось возможным.<br /> Когда мне было девять, мне в руки попала книга Фредерика Форсайта, &#171;День Шакала&#187;. Главный герой книги — киллер, которого наняли для того, чтобы убить президента Франции. Убийце нужно было пробраться мимо полиции, чтобы попасть в квартиру, откуда открывается вид на дорогу, по которой проходит маршрут президента. Киллер прошел мимо полиции на <em>костылях</em>, одетый стариком, и его никто не заподозрил.
@@ -327,15 +331,6 @@ Paul Graham — Lisp: побеждая посредственность | Nikita
       </div>
       <div class="col-sm-12 col-md-12 col-lg-3">
         <div id="stickySideBar" class="sticky-sidebar">
-          
-          <aside class="toc">
-              <h5>
-                Table Of Contents
-              </h5>
-              <div class="toc-content">
-                
-              </div>
-          </aside>
           
 
           
@@ -357,11 +352,6 @@ Paul Graham — Lisp: побеждая посредственность | Nikita
                 <li class="list-inline-item text-center">
                   <a target="_blank" href="https://twitter.com/share?text=Paul%20Graham%20%e2%80%94%20Lisp%3a%20%d0%bf%d0%be%d0%b1%d0%b5%d0%b6%d0%b4%d0%b0%d1%8f%20%d0%bf%d0%be%d1%81%d1%80%d0%b5%d0%b4%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be%d1%81%d1%82%d1%8c&url=https%3a%2f%2fvaniasin.com%2fpaul-graham-lisp-%25D0%25BF%25D0%25BE%25D0%25B1%25D0%25B5%25D0%25B6%25D0%25B4%25D0%25B0%25D1%258F-%25D0%25BF%25D0%25BE%25D1%2581%25D1%2580%25D0%25B5%25D0%25B4%25D1%2581%25D1%2582%25D0%25B2%25D0%25B5%25D0%25BD%25D0%25BD%25D0%25BE%25D1%2581%25D1%2582%25D1%258C%2f">
                     <i class="fab fa-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item text-center">
-                  <a target="_blank" href="https://api.whatsapp.com/send?text=Paul%20Graham%20%e2%80%94%20Lisp%3a%20%d0%bf%d0%be%d0%b1%d0%b5%d0%b6%d0%b4%d0%b0%d1%8f%20%d0%bf%d0%be%d1%81%d1%80%d0%b5%d0%b4%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be%d1%81%d1%82%d1%8c: https%3a%2f%2fvaniasin.com%2fpaul-graham-lisp-%25D0%25BF%25D0%25BE%25D0%25B1%25D0%25B5%25D0%25B6%25D0%25B4%25D0%25B0%25D1%258F-%25D0%25BF%25D0%25BE%25D1%2581%25D1%2580%25D0%25B5%25D0%25B4%25D1%2581%25D1%2582%25D0%25B2%25D0%25B5%25D0%25BD%25D0%25BD%25D0%25BE%25D1%2581%25D1%2582%25D1%258C%2f">
-                    <i class="fab fa-whatsapp"></i>
                   </a>
                 </li>
                 <li class="list-inline-item text-center">
@@ -457,10 +447,14 @@ Paul Graham — Lisp: побеждая посредственность | Nikita
     </div>
 </div></footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 <script>
-    if (document.body.className.includes("light")) {
+    if (localStorage.getItem("pref-theme") === "dark") {
         document.body.classList.add('dark');
-        localStorage.setItem("pref-theme", 'dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
     }
+
 </script>
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {

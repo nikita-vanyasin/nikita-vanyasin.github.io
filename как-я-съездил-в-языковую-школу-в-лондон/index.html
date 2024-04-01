@@ -314,6 +314,10 @@ if (!doNotTrack) {
             </div>
           </div>
           
+          <div class="featured-image">
+            <img class="img-fluid mx-auto d-block" src="/blog-content/uploads/2018/12/queen.jpeg" alt="Как я съездил в языковую школу в Лондон">
+          </div>
+          
           <article class="page-content  p-2">
           <p>Пост изначально был опубликован <a href="https://telegra.ph/Kak-ya-sezdil-v-yazykovuyu-shkolu-v-London-12-18">тут</a></p>
 <p>Текст написан больше с целью документирования и закрепления материала, так что авторский стиль может показаться не очень удобным для чтения. Тем не менее, если нашли опечаточку или ошибочку, или хотите что-то спросить/обсудить - пишите.</p>
@@ -444,40 +448,6 @@ if (!doNotTrack) {
       <div class="col-sm-12 col-md-12 col-lg-3">
         <div id="stickySideBar" class="sticky-sidebar">
           
-          <aside class="toc">
-              <h5>
-                Table Of Contents
-              </h5>
-              <div class="toc-content">
-                <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#оглавление">Оглавление:</a></li>
-        <li><a href="#ещё-три-части-решил-вынести-в-отдельный-пост">Ещё три части решил вынести в отдельный пост:</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#питание">Питание:</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#ещё-три-части-решил-вынести-в-отдельный-пост-1">Ещё три части решил вынести в отдельный пост:</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-              </div>
-          </aside>
-          
 
           
           <aside class="tags">
@@ -498,11 +468,6 @@ if (!doNotTrack) {
                 <li class="list-inline-item text-center">
                   <a target="_blank" href="https://twitter.com/share?text=%d0%9a%d0%b0%d0%ba%20%d1%8f%20%d1%81%d1%8a%d0%b5%d0%b7%d0%b4%d0%b8%d0%bb%20%d0%b2%20%d1%8f%d0%b7%d1%8b%d0%ba%d0%be%d0%b2%d1%83%d1%8e%20%d1%88%d0%ba%d0%be%d0%bb%d1%83%20%d0%b2%20%d0%9b%d0%be%d0%bd%d0%b4%d0%be%d0%bd&url=https%3a%2f%2fvaniasin.com%2f%25D0%25BA%25D0%25B0%25D0%25BA-%25D1%258F-%25D1%2581%25D1%258A%25D0%25B5%25D0%25B7%25D0%25B4%25D0%25B8%25D0%25BB-%25D0%25B2-%25D1%258F%25D0%25B7%25D1%258B%25D0%25BA%25D0%25BE%25D0%25B2%25D1%2583%25D1%258E-%25D1%2588%25D0%25BA%25D0%25BE%25D0%25BB%25D1%2583-%25D0%25B2-%25D0%25BB%25D0%25BE%25D0%25BD%25D0%25B4%25D0%25BE%25D0%25BD%2f">
                     <i class="fab fa-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item text-center">
-                  <a target="_blank" href="https://api.whatsapp.com/send?text=%d0%9a%d0%b0%d0%ba%20%d1%8f%20%d1%81%d1%8a%d0%b5%d0%b7%d0%b4%d0%b8%d0%bb%20%d0%b2%20%d1%8f%d0%b7%d1%8b%d0%ba%d0%be%d0%b2%d1%83%d1%8e%20%d1%88%d0%ba%d0%be%d0%bb%d1%83%20%d0%b2%20%d0%9b%d0%be%d0%bd%d0%b4%d0%be%d0%bd: https%3a%2f%2fvaniasin.com%2f%25D0%25BA%25D0%25B0%25D0%25BA-%25D1%258F-%25D1%2581%25D1%258A%25D0%25B5%25D0%25B7%25D0%25B4%25D0%25B8%25D0%25BB-%25D0%25B2-%25D1%258F%25D0%25B7%25D1%258B%25D0%25BA%25D0%25BE%25D0%25B2%25D1%2583%25D1%258E-%25D1%2588%25D0%25BA%25D0%25BE%25D0%25BB%25D1%2583-%25D0%25B2-%25D0%25BB%25D0%25BE%25D0%25BD%25D0%25B4%25D0%25BE%25D0%25BD%2f">
-                    <i class="fab fa-whatsapp"></i>
                   </a>
                 </li>
                 <li class="list-inline-item text-center">
@@ -598,10 +563,14 @@ if (!doNotTrack) {
     </div>
 </div></footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 <script>
-    if (document.body.className.includes("light")) {
+    if (localStorage.getItem("pref-theme") === "dark") {
         document.body.classList.add('dark');
-        localStorage.setItem("pref-theme", 'dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
     }
+
 </script>
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {
