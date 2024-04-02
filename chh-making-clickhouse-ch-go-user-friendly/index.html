@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
+<link rel="icon" href=/img/fav.png type="image/gif">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+>
+
+
+<link rel="canonical" href="https://vaniasin.com/chh-making-clickhouse-ch-go-user-friendly/">
+
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      media="print" onload="this.media='all'" />
+<noscript>
+  <link
+          href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+</noscript>
+
+
+<link rel="stylesheet" href="/css/font.css" media="all">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-65207644-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<meta property="og:title" content="Making ClickHouse ch-go client more user-friendly" />
+<meta property="og:description" content="ClickHouse is a fast open-source column-oriented database management system that allows generating analytical data reports using SQL queries.
+We were using it for some time in our Golang application with the most popular clickhouse-go/v2 driver package which served nice and allowed writing queries in fast and clean way.
+Recently I came across the benchmarks for different ClickHouse go drivers comparing the performance for simple select: https://github.com/ClickHouse/ch-bench#benchmarks. I was surprised at the difference between clickhouse-go/v2 and ch-go packages and decided to do a bit of research, especially since I wanted to optimize response times for some of our requests." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://vaniasin.com/chh-making-clickhouse-ch-go-user-friendly/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2024-04-02T09:10:08+00:00" />
+<meta property="article:modified_time" content="2024-04-02T09:10:08+00:00" /><meta property="og:site_name" content="Nikita Vaniasin" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Making ClickHouse ch-go client more user-friendly"/>
+<meta name="twitter:description" content="ClickHouse is a fast open-source column-oriented database management system that allows generating analytical data reports using SQL queries.
+We were using it for some time in our Golang application with the most popular clickhouse-go/v2 driver package which served nice and allowed writing queries in fast and clean way.
+Recently I came across the benchmarks for different ClickHouse go drivers comparing the performance for simple select: https://github.com/ClickHouse/ch-bench#benchmarks. I was surprised at the difference between clickhouse-go/v2 and ch-go packages and decided to do a bit of research, especially since I wanted to optimize response times for some of our requests."/>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"><link rel="stylesheet" href="/css/header.css" media="all">
+<link rel="stylesheet" href="/css/footer.css" media="all">
+
+
+<link rel="stylesheet" href="/css/theme.css" media="all">
+
+
+
+
+<style>
+    :root {
+        --text-color: #343a40;
+        --text-secondary-color: #6c757d;
+        --background-color: #eaedf0;
+        --secondary-background-color: #64ffda1a;
+        --primary-color: #133313;
+        --secondary-color: #f8f9fa;
+        --link-color: #1d5c1d;
+
+         
+        --text-color-dark: #e4e6eb;
+        --text-secondary-color-dark: #b0b3b8;
+        --background-color-dark: #18191a;
+        --secondary-background-color-dark: #212529;
+        --primary-color-dark: #ffffff;
+        --secondary-color-dark: #212529;
+        --link-color-dark: ##77aa77;
+    }
+    body {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    html {
+        background-color: var(--background-color) !important;
+    }
+
+    body::-webkit-scrollbar {
+        height: 0px;
+        width: 8px;
+        background-color: var(--background-color);
+    }
+    
+    ::-webkit-scrollbar-track {
+        border-radius: 1rem;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        background: #b0b0b0;
+        outline: 1px solid var(--background-color);
+    }
+
+    #search-content::-webkit-scrollbar {
+        width: .5em;
+        height: .1em;
+        background-color: var(--background-color);
+    }
+</style>
+
+<meta name="description" content="">
+<link rel="stylesheet" href="/css/single.css">
+
+
+<script defer src="/fontawesome-6/all-6.4.2.js"></script>
+
+  <title>
+Making ClickHouse ch-go client more user-friendly | Nikita Vaniasin, Software Engineer
+
+  </title>
+</head>
+
+<body class="light">
+  
+  
+<script>
+    let localStorageValue = localStorage.getItem("pref-theme");
+    let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    switch (localStorageValue) {
+        case "dark":
+            document.body.classList.add('dark');
+            break;
+        case "light":
+            document.body.classList.remove('dark');
+            break;
+        default:
+            if (mediaQuery) {
+                document.body.classList.add('dark');
+            }
+            break;
+    }
+</script>
+
+
+
+
+<script>
+    var prevScrollPos = window.pageYOffset;
+    window.addEventListener("scroll", function showHeaderOnScroll() {
+        let profileHeaderElem = document.getElementById("profileHeader");
+        let currentScrollPos = window.pageYOffset;
+        let resetHeaderStyle = false;
+        let showNavBarOnScrollUp =  false ;
+        let showNavBar = showNavBarOnScrollUp ? prevScrollPos > currentScrollPos : currentScrollPos > 0;
+        if (showNavBar) {
+            profileHeaderElem.classList.add("showHeaderOnTop");
+        } else {
+            resetHeaderStyle = true;
+        }
+        if(currentScrollPos === 0) {
+            resetHeaderStyle = true;
+        }
+        if(resetHeaderStyle) {
+            profileHeaderElem.classList.remove("showHeaderOnTop");
+        }
+        prevScrollPos = currentScrollPos;        
+    });
+</script>
+
+
+
+<header id="profileHeader">
+    <nav class="pt-3 navbar navbar-expand-lg ">
+        <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
+            
+            <a class="navbar-brand primary-font text-wrap" href="/">
+                
+                Nikita Vaniasin
+                
+            </a>
+
+            
+
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24" data-view-component="true">
+                    <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path>
+                </svg>
+            </button>
+
+            
+            <div class="collapse navbar-collapse text-wrap primary-font" id="navbarContent">
+                <ul class="navbar-nav ms-auto text-center">
+                    
+
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#experience"
+                            aria-label="experience">
+                            Experience
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#education"
+                            aria-label="education">
+                            Education
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#projects"
+                            aria-label="projects">
+                            Projects
+                        </a>
+                    </li>
+                    
+
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#contact"
+                            aria-label="contact">
+                            Contact
+                        </a>
+                    </li>
+                    
+
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/blog" title="Blog posts">
+                            
+                            Blog
+                        </a>
+                    </li>
+                    
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        
+                        <div class="text-center">
+                            <button id="theme-toggle">
+                                <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                </svg>
+                                <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="5"></circle>
+                                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </li>
+                    
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</header>
+<div id="content">
+<section id="single">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-12 col-lg-9">
+        <div class="pr-lg-4">
+          <div class="title mb-5">
+            <h1 class="text-center mb-4">Making ClickHouse ch-go client more user-friendly</h1>
+            <div class="text-center">
+              Nikita Vaniasin 
+              <small>|</small>
+              Apr 2, 2024
+
+              
+              <span id="readingTime">
+                min read
+              </span>
+              
+            </div>
+          </div>
+          
+          <div class="featured-image">
+            <img class="img-fluid mx-auto d-block" src="/blog-content/clickhouse-go.png" alt="Making ClickHouse ch-go client more user-friendly">
+          </div>
+          
+          <article class="page-content  p-2">
+          <p>ClickHouse is a fast open-source column-oriented database management system that allows generating analytical data reports using SQL queries.</p>
+<p>We were using it for some time in our Golang application with the most popular <code>clickhouse-go/v2</code> driver package which served nice and allowed writing queries in fast and clean way.</p>
+<p>Recently I came across the benchmarks for different ClickHouse go drivers comparing the performance for simple select: <a href="https://github.com/ClickHouse/ch-bench#benchmarks">https://github.com/ClickHouse/ch-bench#benchmarks</a>. I was surprised at the difference between <a href="https://github.com/ClickHouse/clickhouse-go">clickhouse-go/v2</a> and <a href="https://github.com/ClickHouse/ch-go">ch-go</a> packages and decided to do a bit of research, especially since I wanted to optimize response times for some of our requests.</p>
+<p>The better performance of ch-go comes from its low-level design: it works with columns (as the native ClickHouse protocol), not rows like <code>clickhouse-go/v2</code> driver. Actually <code>clickhouse-go/v2</code> is using <code>ch-go</code> under the hood. After inspecting more of our code, it struck me that we are using the column-oriented database as a traditional relational DB:</p>
+<ul>
+<li>We are reading / unpacking data from ClickHouse using <code>clickhouse-go/v2</code>. Internally it uses ch-go, so it is done in column-by-column way. Then <code>clickhouse-go/v2</code> parses set of columns into a slice of entries (rows).</li>
+<li>Next, we marshal the results into JSON for HTTP response.</li>
+<li>On the frontend, we are using code like <code>let clicks = data.map(({ clicks }) =&gt; clicks)</code> to unpack values again into a list of values!</li>
+</ul>
+<p>So why not just unpack data from ClickHouse result-set into frontend-friendly format and send columns to frontend directly? This is definitely not a new idea.</p>
+<p>I started to investigate how I can introduce <code>ch-go</code> into our project and it turned out that official documentation for <code>ch-go</code> is not detailed enough and there were no proper examples how to use it even for simple SELECTs. Most of the test code was checking the validity by selecting just one row, but this is probably not so important use-case. After some googling, I found these two posts which helped me to understand the package API:</p>
+<ul>
+<li><a href="https://clarktrimble.online/blog/funhouse/">https://clarktrimble.online/blog/funhouse/</a></li>
+<li><a href="https://clarktrimble.online/blog/generic-golang/">https://clarktrimble.online/blog/generic-golang/</a></li>
+</ul>
+<p>Unfortunately, it seems quite <del>stinky</del> funky. Firstly, let’s see old code (row-based approach):</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#728e00">type</span> <span style="color:#728e00">PerformanceResult</span> <span style="color:#728e00">struct</span> {
+	<span style="color:#728e00">Date</span>        <span style="color:#728e00">time</span>.<span style="color:#728e00">Time</span> <span style="color:#7f8c8d">`json:&#34;date&#34; ch:&#34;date&#34;`</span>
+	<span style="color:#728e00">Clicks</span>      <span style="color:#00979d">uint64</span>    <span style="color:#7f8c8d">`json:&#34;clicks&#34; ch:&#34;clicks&#34;`</span>
+	<span style="color:#728e00">Impressions</span> <span style="color:#00979d">uint64</span>    <span style="color:#7f8c8d">`json:&#34;impressions&#34; ch:&#34;impressions&#34;`</span>
+	<span style="color:#728e00">CTR</span>         <span style="color:#00979d">float64</span>   <span style="color:#7f8c8d">`json:&#34;ctr&#34; ch:&#34;ctr&#34;`</span>
+	<span style="color:#728e00">Position</span>    <span style="color:#00979d">float64</span>   <span style="color:#7f8c8d">`json:&#34;position&#34; ch:&#34;avgPosition&#34;`</span>
+	<span style="color:#728e00">Visibility</span>  <span style="color:#00979d">float64</span>   <span style="color:#7f8c8d">`json:&#34;visibility&#34; ch:&#34;visibility&#34;`</span>
+}
+<span style="color:#95a5a6">// ...
+</span><span style="color:#95a5a6"></span>
+<span style="color:#728e00">results</span> <span style="color:#728e00">:=</span> <span style="color:#728e00">make</span>([]<span style="color:#728e00">PerformanceResult</span>, <span style="color:#8a7b52">0</span>)
+<span style="color:#728e00">if</span> <span style="color:#728e00">err</span> <span style="color:#728e00">:=</span> <span style="color:#728e00">s</span>.<span style="color:#728e00">ch</span>.<span style="color:#d35400">Select</span>(<span style="color:#728e00">ctx</span>, <span style="color:#728e00">&amp;</span><span style="color:#728e00">results</span>, <span style="color:#d35400">getPerformanceChartQuery</span>(<span style="color:#728e00">c</span>)); <span style="color:#728e00">err</span> <span style="color:#728e00">!=</span> <span style="color:#00979d">nil</span> {
+	<span style="color:#728e00">return</span> <span style="color:#00979d">nil</span>, <span style="color:#728e00">err</span>
+}
+</code></pre></div><p>You probably have similar code for other databases like MySQL or Postgres. One thing to note here is that <code>clickhouse-go/v2</code> binds values from query results into provided struct using <code>ch</code> struct tag notation.</p>
+<p>New (column-oriented) approach using <code>ch-go</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#728e00">type</span> <span style="color:#728e00">colsPerformanceResult</span> <span style="color:#728e00">struct</span> {
+	<span style="color:#728e00">Date</span>        []<span style="color:#728e00">time</span>.<span style="color:#728e00">Time</span> <span style="color:#7f8c8d">`json:&#34;date&#34;`</span>
+	<span style="color:#728e00">Clicks</span>      []<span style="color:#00979d">uint64</span>    <span style="color:#7f8c8d">`json:&#34;clicks&#34;`</span>
+	<span style="color:#728e00">Impressions</span> []<span style="color:#00979d">uint64</span>    <span style="color:#7f8c8d">`json:&#34;impressions&#34;`</span>
+	<span style="color:#728e00">CTR</span>         []<span style="color:#00979d">float64</span>   <span style="color:#7f8c8d">`json:&#34;ctr&#34;`</span>
+	<span style="color:#728e00">Position</span>    []<span style="color:#00979d">float64</span>   <span style="color:#7f8c8d">`json:&#34;position&#34;`</span>
+	<span style="color:#728e00">Visibility</span>  []<span style="color:#00979d">float64</span>   <span style="color:#7f8c8d">`json:&#34;visibility&#34;`</span>
+}
+
+<span style="color:#95a5a6">// ...
+</span><span style="color:#95a5a6"></span>
+<span style="color:#728e00">var</span> (
+	<span style="color:#728e00">dateCol</span>        = <span style="color:#728e00">&amp;</span><span style="color:#728e00">proto</span>.<span style="color:#728e00">ColDate</span>{}
+	<span style="color:#728e00">clicksCol</span>      = <span style="color:#728e00">&amp;</span><span style="color:#728e00">proto</span>.<span style="color:#728e00">ColUInt64</span>{}
+	<span style="color:#728e00">impressionsCol</span> = <span style="color:#728e00">&amp;</span><span style="color:#728e00">proto</span>.<span style="color:#728e00">ColUInt64</span>{}
+	<span style="color:#728e00">ctrCol</span>         = <span style="color:#728e00">&amp;</span><span style="color:#728e00">proto</span>.<span style="color:#728e00">ColFloat64</span>{}
+	<span style="color:#728e00">avgPositionCol</span> = <span style="color:#728e00">&amp;</span><span style="color:#728e00">proto</span>.<span style="color:#728e00">ColFloat64</span>{}
+	<span style="color:#728e00">visibilityCol</span>  = <span style="color:#728e00">&amp;</span><span style="color:#728e00">proto</span>.<span style="color:#728e00">ColFloat64</span>{}
+)
+
+<span style="color:#728e00">results</span> <span style="color:#728e00">:=</span> <span style="color:#728e00">proto</span>.<span style="color:#728e00">Results</span>{
+	{<span style="color:#728e00">Name</span>: <span style="color:#7f8c8d">&#34;date&#34;</span>, <span style="color:#728e00">Data</span>: <span style="color:#728e00">dateCol</span>},
+	{<span style="color:#728e00">Name</span>: <span style="color:#7f8c8d">&#34;clicks&#34;</span>, <span style="color:#728e00">Data</span>: <span style="color:#728e00">clicksCol</span>},
+	{<span style="color:#728e00">Name</span>: <span style="color:#7f8c8d">&#34;impressions&#34;</span>, <span style="color:#728e00">Data</span>: <span style="color:#728e00">impressionsCol</span>},
+	{<span style="color:#728e00">Name</span>: <span style="color:#7f8c8d">&#34;ctr&#34;</span>, <span style="color:#728e00">Data</span>: <span style="color:#728e00">ctrCol</span>},
+	{<span style="color:#728e00">Name</span>: <span style="color:#7f8c8d">&#34;avgPosition&#34;</span>, <span style="color:#728e00">Data</span>: <span style="color:#728e00">avgPositionCol</span>},
+	{<span style="color:#728e00">Name</span>: <span style="color:#7f8c8d">&#34;visibility&#34;</span>, <span style="color:#728e00">Data</span>: <span style="color:#728e00">visibilityCol</span>},
+}
+
+<span style="color:#728e00">ret</span> <span style="color:#728e00">:=</span> <span style="color:#728e00">&amp;</span><span style="color:#728e00">colsPerformanceResult</span>{}
+
+<span style="color:#728e00">if</span> <span style="color:#728e00">err</span> <span style="color:#728e00">:=</span> <span style="color:#728e00">conn</span>.<span style="color:#d35400">Do</span>(<span style="color:#728e00">ctx</span>, <span style="color:#728e00">ch</span>.<span style="color:#728e00">Query</span>{
+	<span style="color:#728e00">Body</span>:       <span style="color:#d35400">getPerformanceChartQueryBody</span>(<span style="color:#728e00">c</span>),
+	<span style="color:#728e00">Parameters</span>: []<span style="color:#728e00">proto</span>.<span style="color:#728e00">Parameter</span>{<span style="color:#728e00">p1</span>, <span style="color:#728e00">p2</span>, <span style="color:#728e00">p3</span>},
+	<span style="color:#728e00">Result</span>:     <span style="color:#728e00">results</span>.<span style="color:#d35400">Auto</span>(),
+	<span style="color:#728e00">OnResult</span>: <span style="color:#728e00">func</span>(<span style="color:#728e00">ctx</span> <span style="color:#728e00">context</span>.<span style="color:#728e00">Context</span>, <span style="color:#728e00">block</span> <span style="color:#728e00">proto</span>.<span style="color:#728e00">Block</span>) <span style="color:#00979d">error</span> {
+		<span style="color:#728e00">for</span> <span style="color:#728e00">_</span>, <span style="color:#728e00">col</span> <span style="color:#728e00">:=</span> <span style="color:#728e00">range</span> <span style="color:#728e00">results</span> {
+			<span style="color:#728e00">switch</span> <span style="color:#728e00">col</span>.<span style="color:#728e00">Name</span> {
+			<span style="color:#728e00">case</span> <span style="color:#7f8c8d">&#34;date&#34;</span>:
+				<span style="color:#d35400">Append</span>(<span style="color:#728e00">&amp;</span><span style="color:#728e00">ret</span>.<span style="color:#728e00">Date</span>, <span style="color:#728e00">dateCol</span>)
+			<span style="color:#728e00">case</span> <span style="color:#7f8c8d">&#34;clicks&#34;</span>:
+				<span style="color:#d35400">Append</span>(<span style="color:#728e00">&amp;</span><span style="color:#728e00">ret</span>.<span style="color:#728e00">Clicks</span>, <span style="color:#728e00">clicksCol</span>)
+			<span style="color:#728e00">case</span> <span style="color:#7f8c8d">&#34;impressions&#34;</span>:
+				<span style="color:#d35400">Append</span>(<span style="color:#728e00">&amp;</span><span style="color:#728e00">ret</span>.<span style="color:#728e00">Impressions</span>, <span style="color:#728e00">impressionsCol</span>)
+			<span style="color:#728e00">case</span> <span style="color:#7f8c8d">&#34;ctr&#34;</span>:
+				<span style="color:#d35400">Append</span>(<span style="color:#728e00">&amp;</span><span style="color:#728e00">ret</span>.<span style="color:#728e00">CTR</span>, <span style="color:#728e00">ctrCol</span>)
+			<span style="color:#728e00">case</span> <span style="color:#7f8c8d">&#34;visibility&#34;</span>:
+				<span style="color:#d35400">Append</span>(<span style="color:#728e00">&amp;</span><span style="color:#728e00">ret</span>.<span style="color:#728e00">Visibility</span>, <span style="color:#728e00">visibilityCol</span>)
+			<span style="color:#728e00">case</span> <span style="color:#7f8c8d">&#34;avgPosition&#34;</span>:
+				<span style="color:#d35400">Append</span>(<span style="color:#728e00">&amp;</span><span style="color:#728e00">ret</span>.<span style="color:#728e00">Position</span>, <span style="color:#728e00">avgPositionCol</span>)
+			}
+			<span style="color:#728e00">col</span>.<span style="color:#728e00">Data</span>.<span style="color:#d35400">Reset</span>()
+		}
+
+		<span style="color:#728e00">return</span> <span style="color:#00979d">nil</span>
+	},
+}); <span style="color:#728e00">err</span> <span style="color:#728e00">!=</span> <span style="color:#00979d">nil</span> {
+	<span style="color:#728e00">return</span> <span style="color:#00979d">nil</span>, <span style="color:#728e00">err</span>
+}
+
+<span style="color:#95a5a6">// ... where Append is
+</span><span style="color:#95a5a6"></span><span style="color:#728e00">func</span> <span style="color:#728e00">Append</span>[<span style="color:#728e00">T</span> <span style="color:#728e00">any</span>](<span style="color:#728e00">slice</span> <span style="color:#728e00">*</span>[]<span style="color:#728e00">T</span>, <span style="color:#728e00">col</span> <span style="color:#728e00">proto</span>.<span style="color:#728e00">ColumnOf</span>[<span style="color:#728e00">T</span>]) {
+	<span style="color:#728e00">for</span> <span style="color:#728e00">i</span> <span style="color:#728e00">:=</span> <span style="color:#8a7b52">0</span>; <span style="color:#728e00">i</span> &lt; <span style="color:#728e00">col</span>.<span style="color:#d35400">Rows</span>(); <span style="color:#728e00">i</span><span style="color:#728e00">++</span> {
+		<span style="color:#728e00">*</span><span style="color:#728e00">slice</span> = <span style="color:#728e00">append</span>(<span style="color:#728e00">*</span><span style="color:#728e00">slice</span>, <span style="color:#728e00">col</span>.<span style="color:#d35400">Row</span>(<span style="color:#728e00">i</span>))
+	}
+}
+</code></pre></div><p>Now imagine there are thirty more queries should be adjusted…</p>
+<p>As you can see, writing column-oriented code is cumbersome. I’ve tried to figure out a shorter way to implement that. There are some types in <code>proto</code> package available which could help to minimize the code, but I wasn’t able to bring pieces together. That probably wasn’t a goal for <code>ch-go</code> developers and we can’t blame them.</p>
+<p>But we still can make it a bit user-friendly while not losing performance gains. I’ve composed a small package to do just that: ClickHouse Helper (chh) <a href="https://github.com/nikita-vanyasin/chh">https://github.com/nikita-vanyasin/chh</a></p>
+<p>Using this package, we can shorten the code above into:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#728e00">type</span> <span style="color:#728e00">colsPerformanceResult</span> <span style="color:#728e00">struct</span> {
+	<span style="color:#728e00">Date</span>        []<span style="color:#728e00">time</span>.<span style="color:#728e00">Time</span> <span style="color:#7f8c8d">`json:&#34;date&#34;`</span>
+	<span style="color:#728e00">Clicks</span>      []<span style="color:#00979d">uint64</span>    <span style="color:#7f8c8d">`json:&#34;clicks&#34;`</span>
+	<span style="color:#728e00">Impressions</span> []<span style="color:#00979d">uint64</span>    <span style="color:#7f8c8d">`json:&#34;impressions&#34;`</span>
+	<span style="color:#728e00">CTR</span>         []<span style="color:#00979d">float64</span>   <span style="color:#7f8c8d">`json:&#34;ctr&#34;`</span>
+	<span style="color:#728e00">Position</span>    []<span style="color:#00979d">float64</span>   <span style="color:#7f8c8d">`json:&#34;position&#34;`</span>
+	<span style="color:#728e00">Visibility</span>  []<span style="color:#00979d">float64</span>   <span style="color:#7f8c8d">`json:&#34;visibility&#34;`</span>
+}
+
+<span style="color:#95a5a6">// ...
+</span><span style="color:#95a5a6"></span>
+<span style="color:#728e00">ret</span> <span style="color:#728e00">:=</span> <span style="color:#728e00">&amp;</span><span style="color:#728e00">colsPerformanceResult</span>{}
+<span style="color:#728e00">results</span> <span style="color:#728e00">:=</span> <span style="color:#728e00">&amp;</span><span style="color:#728e00">chh</span>.<span style="color:#728e00">ColResults</span>{}
+<span style="color:#728e00">chh</span>.<span style="color:#d35400">BindDate</span>(<span style="color:#728e00">results</span>, <span style="color:#7f8c8d">&#34;date&#34;</span>, <span style="color:#728e00">&amp;</span><span style="color:#728e00">ret</span>.<span style="color:#728e00">Date</span>)
+<span style="color:#728e00">chh</span>.<span style="color:#d35400">BindUInt64</span>(<span style="color:#728e00">results</span>, <span style="color:#7f8c8d">&#34;clicks&#34;</span>, <span style="color:#728e00">&amp;</span><span style="color:#728e00">ret</span>.<span style="color:#728e00">Clicks</span>)
+<span style="color:#728e00">chh</span>.<span style="color:#d35400">BindUInt64</span>(<span style="color:#728e00">results</span>, <span style="color:#7f8c8d">&#34;impressions&#34;</span>, <span style="color:#728e00">&amp;</span><span style="color:#728e00">ret</span>.<span style="color:#728e00">Impressions</span>)
+<span style="color:#728e00">chh</span>.<span style="color:#d35400">BindFloat64</span>(<span style="color:#728e00">results</span>, <span style="color:#7f8c8d">&#34;ctr&#34;</span>, <span style="color:#728e00">&amp;</span><span style="color:#728e00">ret</span>.<span style="color:#728e00">CTR</span>)
+<span style="color:#728e00">chh</span>.<span style="color:#d35400">BindFloat64</span>(<span style="color:#728e00">results</span>, <span style="color:#7f8c8d">&#34;avgPosition&#34;</span>, <span style="color:#728e00">&amp;</span><span style="color:#728e00">ret</span>.<span style="color:#728e00">Position</span>)
+<span style="color:#728e00">chh</span>.<span style="color:#d35400">BindFloat64</span>(<span style="color:#728e00">results</span>, <span style="color:#7f8c8d">&#34;visibility&#34;</span>, <span style="color:#728e00">&amp;</span><span style="color:#728e00">ret</span>.<span style="color:#728e00">Visibility</span>)
+
+<span style="color:#728e00">if</span> <span style="color:#728e00">err</span> <span style="color:#728e00">:=</span> <span style="color:#728e00">chh</span>.<span style="color:#d35400">Select</span>(<span style="color:#728e00">ctx</span>, <span style="color:#728e00">conn</span>, <span style="color:#728e00">results</span>, <span style="color:#d35400">getPerformanceChartQuery</span>(<span style="color:#728e00">c</span>)); <span style="color:#728e00">err</span> <span style="color:#728e00">!=</span> <span style="color:#00979d">nil</span> {
+	<span style="color:#728e00">return</span> <span style="color:#00979d">nil</span>, <span style="color:#728e00">err</span>
+}
+</code></pre></div><p>And for selecting just one row from the result-set (e.g., calculating totals), just use <code>.SelectRow</code> instead:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#728e00">totals</span> <span style="color:#728e00">:=</span> <span style="color:#728e00">&amp;</span><span style="color:#728e00">Totals</span>{}
+<span style="color:#728e00">results</span> <span style="color:#728e00">:=</span> <span style="color:#728e00">&amp;</span><span style="color:#728e00">chh</span>.<span style="color:#728e00">ColResults</span>{}
+<span style="color:#728e00">results</span>.<span style="color:#d35400">BindUInt64</span>(<span style="color:#7f8c8d">&#34;count&#34;</span>, <span style="color:#728e00">&amp;</span><span style="color:#728e00">totals</span>.<span style="color:#728e00">Count</span>)
+<span style="color:#728e00">results</span>.<span style="color:#d35400">BindUInt64</span>(<span style="color:#7f8c8d">&#34;sumClicks&#34;</span>, <span style="color:#728e00">&amp;</span><span style="color:#728e00">totals</span>.<span style="color:#728e00">Clicks</span>)
+<span style="color:#728e00">results</span>.<span style="color:#d35400">BindUInt64</span>(<span style="color:#7f8c8d">&#34;sumImpressions&#34;</span>, <span style="color:#728e00">&amp;</span><span style="color:#728e00">totals</span>.<span style="color:#728e00">Impressions</span>)
+<span style="color:#728e00">results</span>.<span style="color:#d35400">BindFloat64</span>(<span style="color:#7f8c8d">&#34;avgCTR&#34;</span>, <span style="color:#728e00">&amp;</span><span style="color:#728e00">totals</span>.<span style="color:#728e00">CTR</span>)
+<span style="color:#728e00">results</span>.<span style="color:#d35400">BindFloat64</span>(<span style="color:#7f8c8d">&#34;avgPosition&#34;</span>, <span style="color:#728e00">&amp;</span><span style="color:#728e00">totals</span>.<span style="color:#728e00">Position</span>)
+
+<span style="color:#728e00">if</span> <span style="color:#728e00">err</span> <span style="color:#728e00">:=</span> <span style="color:#728e00">chh</span>.<span style="color:#d35400">SelectRow</span>(<span style="color:#728e00">ctx</span>, <span style="color:#728e00">conn</span>, <span style="color:#728e00">results</span>, <span style="color:#d35400">getQueriesTotalQuery</span>(<span style="color:#728e00">c</span>)); <span style="color:#728e00">err</span> <span style="color:#728e00">!=</span> <span style="color:#00979d">nil</span> {
+	<span style="color:#728e00">return</span> <span style="color:#00979d">nil</span>, <span style="color:#728e00">err</span>
+}
+</code></pre></div><p>That seems to be a bit cleaner way to work with ClickHouse without employing heavy-weight <code>clickhouse-go/v2</code> package. After moving our backend to column-based approach, we achieved the reduction of average response time up-to 50-60% for some queries. Frontend code also became simpler because we are feeding column data into 3d-party libraries anyway.</p>
+<p>There is still a room for improvements and I’m planning to add more “sugar” into <code>chh</code>:</p>
+<ul>
+<li>If we want to return results directly to the HTTP client, we probably don’t need to define a new type for result struct — we can just add some json Marshal interface support into <code>chh</code>.</li>
+<li>It is probably hard to come up with a solution for INSERTs which can be universal for everyone. But I think it is possible to introduce some helper functions to simplify code for composing batches.</li>
+</ul>
+<p>Please give a try to the <a href="https://github.com/nikita-vanyasin/chh">github.com/nikita-vanyasin/chh package</a> and let me know what you think 😉</p>
+<p>Is there a cleaner way to get same results without adding wrappers for <code>ch-go</code>?</p>
+
+          </article>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-3">
+        <div id="stickySideBar" class="sticky-sidebar">
+          
+
+          
+          <aside class="tags">
+            <h5>Tags</h5>
+            <ul class="tags-ul list-unstyled list-inline">
+              
+              <li class="list-inline-item"><a href="https://vaniasin.com/tags/clickhouse" target="_blank">ClickHouse</a></li>
+              
+              <li class="list-inline-item"><a href="https://vaniasin.com/tags/golang" target="_blank">golang</a></li>
+              
+              <li class="list-inline-item"><a href="https://vaniasin.com/tags/projects" target="_blank">projects</a></li>
+              
+            </ul>
+          </aside>
+          
+
+          
+          <aside class="social">
+            <h5>Social</h5>
+            <div class="social-content">
+              <ul class="list-inline">
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://twitter.com/share?text=Making%20ClickHouse%20ch-go%20client%20more%20user-friendly&url=https%3a%2f%2fvaniasin.com%2fchh-making-clickhouse-ch-go-user-friendly%2f">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href='mailto:?subject=Making%20ClickHouse%20ch-go%20client%20more%20user-friendly&amp;body=Check%20out%20this%20site https%3a%2f%2fvaniasin.com%2fchh-making-clickhouse-ch-go-user-friendly%2f'>
+                    <i class="fa fa-envelope"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </aside>
+          
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-9 p-4">
+        
+      </div>
+    </div>
+  </div>
+  <button class="p-2 px-3" onclick="topFunction()" id="topScroll">
+    <i class="fas fa-angle-up"></i>
+  </button>
+</section>
+
+
+<div class="progress">
+  <div id="scroll-progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<Script src="/js/scrollProgressBar.js"></script>
+
+
+<script>
+  var topScroll = document.getElementById("topScroll");
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      topScroll.style.display = "block";
+    } else {
+      topScroll.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  
+  let stickySideBarElem = document.getElementById("stickySideBar");
+  let stickyNavBar =  true ;
+  if(stickyNavBar) {
+    let headerElem = document.getElementById("profileHeader");
+    let headerHeight = headerElem.offsetHeight + 15;
+    stickySideBarElem.style.top = headerHeight + "px";
+  } else {
+    stickySideBarElem.style.top = "50px";
+  }
+</script>
+
+
+<script src="/js/readingTime.js"></script>
+
+
+
+  </div><footer>
+    
+ 
+
+<div class="text-center pt-2">
+    
+
+    
+
+    
+
+    
+
+    
+</div><div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-4 text-center">
+            
+            &copy; 2024  All rights reserved
+            <div class="text-secondary">
+                Made with <a href="https://github.com/gurusabarish/hugo-profile" target="_blank"
+                    title="Designed and developed by gurusabarish">
+                    Hugo Profile
+                </a>
+            </div>
+        </div>
+    </div>
+</div></footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+
+</script>
+
+
+
+
+
+
+
+
+
+<script src="/js/contact.js"></script>
+
+
+
+
+  <section id="search-content" class="py-2">
+    <div class="container" id="search-results"></div>
+  </section>
+</body>
+
+</html>

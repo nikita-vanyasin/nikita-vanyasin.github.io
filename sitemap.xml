@@ -3,15 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://vaniasin.com/blog/</loc>
-    <lastmod>2022-01-01T17:00:08+03:00</lastmod>
+    <lastmod>2024-04-02T09:10:08+00:00</lastmod>
+  </url><url>
+    <loc>https://vaniasin.com/tags/clickhouse/</loc>
+    <lastmod>2024-04-02T09:10:08+00:00</lastmod>
+  </url><url>
+    <loc>https://vaniasin.com/tags/golang/</loc>
+    <lastmod>2024-04-02T09:10:08+00:00</lastmod>
+  </url><url>
+    <loc>https://vaniasin.com/chh-making-clickhouse-ch-go-user-friendly/</loc>
+    <lastmod>2024-04-02T09:10:08+00:00</lastmod>
   </url><url>
     <loc>https://vaniasin.com/</loc>
-    <lastmod>2022-01-01T17:00:08+03:00</lastmod>
+    <lastmod>2024-04-02T09:10:08+00:00</lastmod>
   </url><url>
-    <loc>https://vaniasin.com/tags/personal/</loc>
-    <lastmod>2022-01-01T17:00:08+03:00</lastmod>
+    <loc>https://vaniasin.com/tags/projects/</loc>
+    <lastmod>2024-04-02T09:10:08+00:00</lastmod>
   </url><url>
     <loc>https://vaniasin.com/tags/</loc>
+    <lastmod>2024-04-02T09:10:08+00:00</lastmod>
+  </url><url>
+    <loc>https://vaniasin.com/tags/personal/</loc>
     <lastmod>2022-01-01T17:00:08+03:00</lastmod>
   </url><url>
     <loc>https://vaniasin.com/tags/year-in-post/</loc>
@@ -33,9 +45,6 @@
     <lastmod>2018-12-22T18:17:08+00:00</lastmod>
   </url><url>
     <loc>https://vaniasin.com/code-morass-editor/</loc>
-    <lastmod>2017-03-16T19:55:58+00:00</lastmod>
-  </url><url>
-    <loc>https://vaniasin.com/tags/projects/</loc>
     <lastmod>2017-03-16T19:55:58+00:00</lastmod>
   </url><url>
     <loc>https://vaniasin.com/tags/conferences/</loc>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>golang on Nikita Vaniasin, Software Engineer</title>
+    <link>https://vaniasin.com/tags/golang/</link>
+    <description>Recent content in golang on Nikita Vaniasin, Software Engineer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 02 Apr 2024 09:10:08 +0000</lastBuildDate><atom:link href="https://vaniasin.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Making ClickHouse ch-go client more user-friendly</title>
+      <link>https://vaniasin.com/chh-making-clickhouse-ch-go-user-friendly/</link>
+      <pubDate>Tue, 02 Apr 2024 09:10:08 +0000</pubDate>
+      
+      <guid>https://vaniasin.com/chh-making-clickhouse-ch-go-user-friendly/</guid>
+      <description>ClickHouse is a fast open-source column-oriented database management system that allows generating analytical data reports using SQL queries.
+We were using it for some time in our Golang application with the most popular clickhouse-go/v2 driver package which served nice and allowed writing queries in fast and clean way.
+Recently I came across the benchmarks for different ClickHouse go drivers comparing the performance for simple select: https://github.com/ClickHouse/ch-bench#benchmarks. I was surprised at the difference between clickhouse-go/v2 and ch-go packages and decided to do a bit of research, especially since I wanted to optimize response times for some of our requests.</description>
+    </item>
+    
+  </channel>
+</rss>
