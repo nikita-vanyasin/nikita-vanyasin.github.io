@@ -14,9 +14,12 @@ footer a:hover {
 footer .card {
     background-color: var(--secondary-color) !important;
     border-radius: .75rem;
-    cursor: context-menu;
     overflow: hidden;
     border: none;
+}
+
+footer .card-body {
+    min-height: 104px;
 }
 
 footer .card:hover {
